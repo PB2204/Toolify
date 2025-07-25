@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Footer } from '@/components/Footer';
+import { Navbar } from '@/components/Navbar';
 
 export const metadata: Metadata = {
   title: 'Toolify',
@@ -29,6 +30,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <Navbar />
             <div className="flex-grow">
               {children}
             </div>

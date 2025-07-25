@@ -2,7 +2,6 @@ import { getToolsByCategory } from '@/lib/tools';
 import { ToolCard } from '@/components/ToolCard';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ThemeToggle } from '@/components/ThemeToggle';
 import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
@@ -15,18 +14,11 @@ export default function Home() {
       <div className="absolute inset-0 -z-10 h-full w-full bg-background/80 backdrop-blur-2xl" />
 
       <div className="container mx-auto px-4">
-        <header className="flex justify-between items-center py-6">
-          <h1 className="font-headline text-2xl md:text-3xl font-bold text-foreground dark:text-white">
-            <Link href="/">Toolify</Link>
-          </h1>
-          <ThemeToggle />
-        </header>
-
         <main className="py-20 md:py-32">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground dark:animated-gradient-text">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground dark:animated-gradient-text">
               The Ultimate Developer Toolkit
-            </h2>
+            </h1>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground dark:text-slate-300">
               Your one-stop shop for 60+ essential developer, designer, and content tools. Streamline your workflow with our powerful and easy-to-use utilities, all with a modern, beautiful UI.
             </p>
@@ -42,9 +34,9 @@ export default function Home() {
           <div className="mt-24">
             {toolCategories.map((category) => (
               <section key={category.name} className="mb-16">
-                <h3 className="font-headline text-3xl font-semibold mb-8 text-foreground/90 dark:text-white/90">
+                <h2 className="font-headline text-3xl font-semibold mb-8 text-foreground/90 dark:text-white/90">
                   {category.name}
-                </h3>
+                </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {category.tools.map((tool) => (
                     <ToolCard
