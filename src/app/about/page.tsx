@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Award, Briefcase, CheckCircle, Heart, Users } from 'lucide-react';
+import { Award, Briefcase, CheckCircle, Heart } from 'lucide-react';
 
 const stats = [
   { value: '2', label: 'Years of Experience', icon: Award },
@@ -40,12 +40,6 @@ const features = [
 const services = [
   'Branding', 'Website Design', 'App Design', 'Development', 
   'UI/UX Design', 'Graphic Design', 'Motion Graphic', 'Digital Marketing', 'SEO'
-];
-
-const teamMembers = [
-    { name: 'John Doe', role: 'Lead Developer' },
-    { name: 'Jane Smith', role: 'UI/UX Designer' },
-    { name: 'Alex Johnson', role: 'Project Manager' },
 ];
 
 export default function AboutPage() {
@@ -131,36 +125,6 @@ export default function AboutPage() {
              <p className="mt-4 text-muted-foreground dark:text-slate-300 max-w-2xl mx-auto">
                 Explore the cutting-edge tools and platforms that power our projects. At MB Webber's, we bring together a blend of innovative technologies to deliver outstanding solutions.
             </p>
-        </section>
-
-        {/* Team Section */}
-        <section>
-             <div className="text-center mb-12">
-                <h2 className="font-headline text-3xl font-semibold text-foreground/90 dark:text-white/90">
-                    Meet Our Team
-                </h2>
-                 <p className="mt-4 text-muted-foreground dark:text-slate-300 max-w-2xl mx-auto">
-                    Get to know the talented individuals who make our company thrive. Our diverse team brings together a wealth of expertise.
-                </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {teamMembers.map(member => (
-                    <div key={member.name} className="glow-border rounded-xl p-0.5">
-                        <div className="bg-card/60 dark:bg-white/5 backdrop-blur-md rounded-lg p-6 text-center h-full">
-                            <div className="w-24 h-24 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center">
-                                <Users className="w-12 h-12 text-primary" />
-                            </div>
-                            <h3 className="text-xl font-headline font-semibold text-foreground/90 dark:text-white/90">{member.name}</h3>
-                            <p className="text-primary">{member.role}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-             <div className="text-center mt-12">
-                 <Button size="lg" asChild className="group glow-border bg-foreground/10 text-foreground hover:bg-foreground/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 backdrop-blur-sm border border-border dark:border-white/20 transition-all duration-300">
-                    <a href="https://mbwebbers.tech/team" target="_blank" rel="noopener noreferrer">See More</a>
-                </Button>
-            </div>
         </section>
 
         {/* CTA */}
