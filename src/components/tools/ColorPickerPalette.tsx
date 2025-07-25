@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Copy, RefreshCw } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
@@ -12,6 +12,11 @@ export default function ColorPickerPalette() {
   const [currentColor, setCurrentColor] = useState('#6366F1');
   const [palette, setPalette] = useState<string[]>([]);
   const { toast } = useToast();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleColorChange = (color: ColorResult) => {
     setCurrentColor(color.hex);
@@ -33,7 +38,11 @@ export default function ColorPickerPalette() {
     setPalette(newPalette);
   };
   
-  useState(generatePalette);
+  useEffect(() => {
+    if(currentColor) {
+      generatePalette();
+    }
+  },[currentColor]);
 
   const handleCopy = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -59,13 +68,15 @@ export default function ColorPickerPalette() {
         </CardHeader>
         <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col items-center gap-4">
-                 <SketchPicker
-                    color={currentColor}
-                    onChangeComplete={handleColorChange}
-                    disableAlpha
-                    width="100%"
-                    className="!shadow-none !bg-transparent !p-0"
-                 />
+                 {isClient && (
+                    <SketchPicker
+                        color={currentColor}
+                        onChangeComplete={handleColorChange}
+                        disableAlpha
+                        width="100%"
+                        className="!shadow-none !bg-transparent !p-0"
+                    />
+                 )}
                  {colorValues && (
                     <Card className="w-full p-4 space-y-2">
                         {Object.entries(colorValues).map(([key, value]) => (
