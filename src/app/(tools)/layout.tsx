@@ -1,7 +1,8 @@
 import { SidebarProvider, Sidebar, SidebarInset, SidebarHeader, SidebarContent, SidebarMenu, SidebarMenuItem, SidebarMenuButton } from "@/components/ui/sidebar";
 import { allTools } from "@/lib/tools";
 import Link from "next/link";
-import { Home } from "lucide-react";
+import { Home, Info, Mail } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 
 export default function ToolsLayout({
   children,
@@ -30,6 +31,23 @@ export default function ToolsLayout({
                     </Link>
                     </SidebarMenuButton>
                 </SidebarMenuItem>
+                 <SidebarMenuItem>
+                    <SidebarMenuButton asChild tooltip="About Us" className="text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground data-[active=true]:bg-primary/10 data-[active=true]:text-primary dark:text-slate-300 dark:hover:bg-white/10 dark:data-[active=true]:bg-pink-500/20 dark:data-[active=true]:text-white md:hidden">
+                        <Link href="/about">
+                            <Info />
+                            <span>About Us</span>
+                        </Link>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
+                 <SidebarMenuItem>
+                    <SidebarMenuButton asChild tooltip="Contact" className="text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground data-[active=true]:bg-primary/10 data-[active=true]:text-primary dark:text-slate-300 dark:hover:bg-white/10 dark:data-[active=true]:bg-pink-500/20 dark:data-[active=true]:text-white md:hidden">
+                        <Link href="/contact">
+                            <Mail />
+                            <span>Contact</span>
+                        </Link>
+                    </SidebarMenuButton>
+                </SidebarMenuItem>
+                <Separator className="my-2 md:hidden" />
                 {allTools.sort((a, b) => a.name.localeCompare(b.name)).map((tool) => (
                     <SidebarMenuItem key={tool.slug}>
                     <SidebarMenuButton asChild tooltip={tool.name} className="text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground data-[active=true]:bg-primary/10 data-[active=true]:text-primary dark:text-slate-300 dark:hover:bg-white/10 dark:data-[active=true]:bg-pink-500/20 dark:data-[active=true]:text-white">
