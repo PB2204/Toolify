@@ -66,22 +66,22 @@ const toolsList: Tool[] = [
   { name: 'JSON Formatter & Validator', slug: 'json-formatter', description: 'Beautify and validate your JSON data.', icon: Braces, category: 'Text & Data' },
   { name: 'Lorem Ipsum Generator', slug: 'lorem-ipsum-generator', description: 'Generate placeholder text.', icon: Text, category: 'Text & Data' },
   { name: 'Case Converter', slug: 'case-converter', description: 'Convert text to various case formats.', icon: CaseSensitive, category: 'Text & Data' },
-  { name: 'Text Cleaner', slug: 'text-cleaner', description: 'Remove extra spaces, lines, and HTML tags.', icon: Trash2, category: 'Text & Data' },
+  { name: 'Text Cleaner', slug: 'text-cleaner', description: 'Remove extra spaces, lines, and HTML tags.', icon: Trash2, category: 'Text & Data', isNew: true },
   { name: 'Word & Character Counter', slug: 'word-character-counter', description: 'Count words, characters, and lines.', icon: Type, category: 'Text & Data' },
   { name: 'Readability Score Checker', slug: 'readability-score-checker', description: 'Check readability scores like Flesch-Kincaid.', icon: ScanEye, category: 'Text & Data' },
   { name: 'Diff & Merge Checker', slug: 'diff-merge-checker', description: 'Compare two text files.', icon: FlipHorizontal, category: 'Text & Data' },
   
   // Encoders & Decoders
-  { name: 'Base64 Encode / Decode', slug: 'base64-encoder-decoder', description: 'Encode or decode Base64 strings.', icon: ArrowRightLeft, category: 'Encoders & Decoders', isNew: true },
-  { name: 'URL Encoder / Decoder', slug: 'url-encoder-decoder', description: 'Encode or decode URL components.', icon: Link, category: 'Encoders & Decoders', isNew: true },
-  { name: 'JWT Decoder', slug: 'jwt-decoder', description: 'Decode JSON Web Tokens.', icon: Fingerprint, category: 'Encoders & Decoders' },
-  { name: 'HTML Entity Encoder / Decoder', slug: 'html-entity-encoder-decoder', description: 'Convert characters to HTML entities.', icon: Code2, category: 'Encoders & Decoders' },
+  { name: 'Base64 Encode / Decode', slug: 'base64-encoder-decoder', description: 'Encode or decode Base64 strings.', icon: ArrowRightLeft, category: 'Encoders & Decoders' },
+  { name: 'URL Encoder / Decoder', slug: 'url-encoder-decoder', description: 'Encode or decode URL components.', icon: Link, category: 'Encoders & Decoders' },
+  { name: 'JWT Decoder', slug: 'jwt-decoder', description: 'Decode JSON Web Tokens.', icon: Fingerprint, category: 'Encoders & Decoders', isNew: true },
+  { name: 'HTML Entity Encoder / Decoder', slug: 'html-entity-encoder-decoder', description: 'Convert characters to HTML entities.', icon: Code2, category: 'Encoders & Decoders', isNew: true },
 
   // Generators
-  { name: 'UUID / GUID Generator', slug: 'uuid-guid-generator', description: 'Generate unique identifiers.', icon: Fingerprint, category: 'Generators', isNew: true },
-  { name: 'QR Code Generator', slug: 'qr-code-generator', description: 'Create QR codes from text or URLs.', icon: QrCode, category: 'Generators' },
-  { name: 'Password Generator', slug: 'password-generator', description: 'Generate secure, random passwords.', icon: Lock, category: 'Generators', isNew: true },
-  { name: 'Hash Generator', slug: 'hash-generator', description: 'Generate MD5, SHA1, SHA256 hashes.', icon: Hash, category: 'Generators', isNew: true },
+  { name: 'UUID / GUID Generator', slug: 'uuid-guid-generator', description: 'Generate unique identifiers.', icon: Fingerprint, category: 'Generators' },
+  { name: 'QR Code Generator', slug: 'qr-code-generator', description: 'Create QR codes from text or URLs.', icon: QrCode, category: 'Generators', isNew: true },
+  { name: 'Password Generator', slug: 'password-generator', description: 'Generate secure, random passwords.', icon: Lock, category: 'Generators' },
+  { name: 'Hash Generator', slug: 'hash-generator', description: 'Generate MD5, SHA1, SHA256 hashes.', icon: Hash, category: 'Generators' },
   { name: 'Random Data Generator', slug: 'random-data-generator', description: 'Generate random names, emails, etc.', icon: TestTube2, category: 'Generators' },
   { name: 'Favicon Generator', slug: 'favicon-generator', description: 'Create favicons from an image.', icon: Image, category: 'Generators' },
   
@@ -89,15 +89,15 @@ const toolsList: Tool[] = [
   { name: 'Paraphraser', slug: 'paraphraser', description: 'Rewrite text to avoid plagiarism.', icon: Wand2, category: 'AI Tools' },
   
   // Converters
-  { name: 'Markdown to HTML', slug: 'markdown-to-html', description: 'Convert Markdown to HTML.', icon: FileCode, category: 'Converters' },
+  { name: 'Markdown to HTML', slug: 'markdown-to-html', description: 'Convert Markdown to HTML.', icon: FileCode, category: 'Converters', isNew: true },
   { name: 'HTML to Markdown', slug: 'html-to-markdown', description: 'Convert HTML to Markdown.', icon: FileCode, category: 'Converters' },
-  { name: 'YAML to JSON Converter', slug: 'yaml-to-json-converter', description: 'Convert YAML data to JSON format.', icon: ArrowRightLeft, category: 'Converters' },
+  { name: 'YAML to JSON Converter', slug: 'yaml-to-json-converter', description: 'Convert YAML data to JSON format.', icon: ArrowRightLeft, category: 'Converters', isNew: true },
   { name: 'JSON to YAML Converter', slug: 'json-to-yaml-converter', description: 'Convert JSON data to YAML format.', icon: ArrowRightLeft, category: 'Converters' },
   { name: 'CSV to JSON Converter', slug: 'csv-to-json-converter', description: 'Convert CSV files to JSON.', icon: Sheet, category: 'Converters' },
-  { name: 'Epoch / Timestamp Converter', slug: 'epoch-timestamp-converter', description: 'Convert between Unix timestamps and dates.', icon: Timer, category: 'Converters' },
-  { name: 'Timezone Converter', slug: 'timezone-converter', description: 'Convert times across different timezones.', icon: Clock, category: 'Converters' },
+  { name: 'Epoch / Timestamp Converter', slug: 'epoch-timestamp-converter', description: 'Convert between Unix timestamps and dates.', icon: Timer, category: 'Converters', isNew: true },
+  { name: 'Timezone Converter', slug: 'timezone-converter', description: 'Convert times across different timezones.', icon: Clock, category: 'Converters', isNew: true },
   { name: 'ISO Date Formatter', slug: 'iso-date-formatter', description: 'Format dates into ISO 8601 strings.', icon: CalendarDays, category: 'Converters' },
-  { name: 'Unit Converter', slug: 'unit-converter', description: 'Convert length, weight, temp, etc.', icon: Scale, category: 'Converters' },
+  { name: 'Unit Converter', slug: 'unit-converter', description: 'Convert length, weight, temp, etc.', icon: Scale, category: 'Converters', isNew: true },
   { name: 'Currency Converter', slug: 'currency-converter', description: 'Convert between world currencies.', icon: DollarSign, category: 'Converters' },
 
   // Image Tools
@@ -108,7 +108,7 @@ const toolsList: Tool[] = [
   { name: 'PDF to Images Converter', slug: 'pdf-to-images-converter', description: 'Convert PDF pages to images.', icon: Image, category: 'Image Tools' },
 
   // CSS Tools
-  { name: 'Color Picker & Palette', slug: 'color-picker-palette', description: 'Pick colors and generate palettes.', icon: Palette, category: 'CSS Tools' },
+  { name: 'Color Picker & Palette', slug: 'color-picker-palette', description: 'Pick colors and generate palettes.', icon: Palette, category: 'CSS Tools', isNew: true },
   { name: 'Gradient Generator', slug: 'gradient-generator', description: 'Create CSS gradients.', icon: Palette, category: 'CSS Tools' },
   { name: 'Box-Shadow Generator', slug: 'box-shadow-generator', description: 'Generate CSS box-shadow styles.', icon: BoxSelect, category: 'CSS Tools' },
   { name: 'Border-Radius Generator', slug: 'border-radius-generator', description: 'Preview and generate CSS border-radius.', icon: BoxSelect, category: 'CSS Tools' },
