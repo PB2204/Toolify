@@ -18,6 +18,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  serverActions: {
+    allowedOrigins: ["api.allorigins.win"],
+  },
 };
 
 export default nextConfig;

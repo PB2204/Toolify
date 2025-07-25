@@ -31,6 +31,15 @@ import MimeTypeLookup from './MimeTypeLookup';
 import IpGeoLookup from './IpGeoLookup';
 import PercentageCalculator from './PercentageCalculator';
 import LoanCalculator from './LoanCalculator';
+import HtmlToMarkdown from './HtmlToMarkdown';
+import BorderRadiusGenerator from './BorderRadiusGenerator';
+import UrlShortener from './UrlShortener';
+import MetaTagPreviewer from './MetaTagPreviewer';
+import DnsWhoisLookup from './DnsWhoisLookup';
+import HttpHeaderInspector from './HttpHeaderInspector';
+import UnicodeInspector from './UnicodeInspector';
+import EmojiPicker from './EmojiPicker';
+import RandomDataGenerator from './RandomDataGenerator';
 
 // Dynamically import all tool components. For now, most will be ComingSoon.
 const toolComponents: { [key: string]: React.ComponentType } = {
@@ -50,10 +59,10 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'qr-code-generator': QrCodeGenerator,
   'password-generator': PasswordGenerator,
   'hash-generator': HashGenerator,
-  'random-data-generator': ComingSoon,
+  'random-data-generator': RandomDataGenerator,
   'favicon-generator': ComingSoon,
   'markdown-to-html': MarkdownToHtml,
-  'html-to-markdown': ComingSoon,
+  'html-to-markdown': HtmlToMarkdown,
   'yaml-to-json-converter': YamlToJsonConverter,
   'json-to-yaml-converter': JsonToYamlConverter,
   'csv-to-json-converter': CsvToJsonConverter,
@@ -70,12 +79,12 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'color-picker-palette': ColorPickerPalette,
   'gradient-generator': ComingSoon,
   'box-shadow-generator': BoxShadowGenerator,
-  'border-radius-generator': ComingSoon,
+  'border-radius-generator': BorderRadiusGenerator,
   'css-playground': ComingSoon,
   'regex-tester': RegexTester,
-  'url-shortener': ComingSoon,
+  'url-shortener': UrlShortener,
   'responsive-tester': ComingSoon,
-  'meta-tag-previewer': ComingSoon,
+  'meta-tag-previewer': MetaTagPreviewer,
   'robots-sitemap-generator': ComingSoon,
   'utm-builder': ComingSoon,
   'pwa-icons-generator': ComingSoon,
@@ -83,13 +92,13 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'cron-expression-builder': ComingSoon,
   'regex-cheat-sheet': ComingSoon,
   'mime-type-lookup': MimeTypeLookup,
-  'dns-whois-lookup': ComingSoon,
+  'dns-whois-lookup': DnsWhoisLookup,
   'ip-geo-lookup': IpGeoLookup,
   'ping-visualizer': ComingSoon,
-  'http-header-inspector': ComingSoon,
+  'http-header-inspector': HttpHeaderInspector,
   'websocket-tester': ComingSoon,
-  'unicode-inspector': ComingSoon,
-  'emoji-picker': ComingSoon,
+  'unicode-inspector': UnicodeInspector,
+  'emoji-picker': EmojiPicker,
   'percentage-calculator': PercentageCalculator,
   'loan-calculator': LoanCalculator,
   'pdf-merger-splitter': ComingSoon,
