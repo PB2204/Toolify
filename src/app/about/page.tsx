@@ -1,11 +1,7 @@
-import { Metadata } from 'next';
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Award, Briefcase, CheckCircle, Heart, Users } from 'lucide-react';
-
-export const metadata: Metadata = {
-  title: 'About Us | Toolify',
-  description: 'Learn more about MB Webber\'s, the dynamic tech agency behind Toolify.',
-};
 
 const stats = [
   { value: '2', label: 'Years of Experience', icon: Award },
@@ -124,15 +120,6 @@ export default function AboutPage() {
                     </div>
                 ))}
             </div>
-             <style jsx>{`
-                @keyframes marquee {
-                    0% { transform: translateX(0%); }
-                    100% { transform: translateX(-50%); }
-                }
-                .animate-marquee-infinite {
-                    animation: marquee 40s linear infinite;
-                }
-            `}</style>
         </section>
 
 
