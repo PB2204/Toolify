@@ -1,11 +1,12 @@
 import React from 'react';
 import ComingSoon from './ComingSoon';
 import Paraphraser from './Paraphraser';
+import JsonFormatter from './JsonFormatter';
 
 // Dynamically import all tool components. For now, most will be ComingSoon.
 const toolComponents: { [key: string]: React.ComponentType } = {
   'paraphraser': Paraphraser,
-  'json-formatter': ComingSoon,
+  'json-formatter': JsonFormatter,
   'lorem-ipsum-generator': ComingSoon,
   'case-converter': ComingSoon,
   'text-cleaner': ComingSoon,

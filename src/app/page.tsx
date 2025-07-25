@@ -37,7 +37,7 @@ export default function Home() {
                   name={tool.name}
                   description={tool.description}
                   icon={tool.icon}
-                  isNew={tool.slug === featuredTool}
+                  isNew={tool.isNew}
                 />
               ))}
             </div>
@@ -46,7 +46,7 @@ export default function Home() {
       </main>
       
       <footer className="text-center mt-20 py-6 border-t">
-        <p className="text-muted-foreground">&copy; {new Date().getFullYear()} Toolify. All rights reserved.</p>
+        <p className="text-muted-foreground">&copy; {new Date().getFullYear()} Toolify. All rights reserved. || Developed with ❤️ :: By <a href="https://mbwebbers.tech" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">MB WEBBER'S</a></p>
       </footer>
     </div>
   );

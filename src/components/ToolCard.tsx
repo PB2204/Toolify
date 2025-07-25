@@ -20,7 +20,8 @@ export function ToolCard({ name, description, icon: Icon, href, isNew }: ToolCar
         'backdrop-blur-sm',
         'border border-white/50 dark:border-slate-800/50',
         'shadow-md hover:shadow-xl dark:shadow-slate-950/50',
-        'group-hover:-translate-y-1 group-hover:border-accent/50'
+        'group-hover:-translate-y-1 group-hover:border-accent/50',
+        'flex flex-col'
       )}>
         <div className="flex items-start justify-between">
           <div className="mb-4 inline-block rounded-lg bg-primary/10 p-3 text-primary">
@@ -29,7 +30,7 @@ export function ToolCard({ name, description, icon: Icon, href, isNew }: ToolCar
           {isNew && <Badge variant="outline" className="border-accent text-accent">New</Badge>}
         </div>
         <h3 className="font-headline text-lg font-semibold text-primary">{name}</h3>
-        <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+        <p className="mt-1 text-sm text-muted-foreground flex-grow">{description}</p>
       </div>
     </Link>
   );

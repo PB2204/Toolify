@@ -52,6 +52,7 @@ export type Tool = {
   description: string;
   icon: LucideIcon;
   category: string;
+  isNew?: boolean;
 };
 
 export type ToolCategory = {
@@ -61,7 +62,7 @@ export type ToolCategory = {
 
 const toolsList: Tool[] = [
   // Text & Content
-  { name: 'JSON Formatter & Validator', slug: 'json-formatter', description: 'Beautify and validate your JSON data.', icon: Braces, category: 'Text & Data' },
+  { name: 'JSON Formatter & Validator', slug: 'json-formatter', description: 'Beautify and validate your JSON data.', icon: Braces, category: 'Text & Data', isNew: true },
   { name: 'Lorem Ipsum Generator', slug: 'lorem-ipsum-generator', description: 'Generate placeholder text.', icon: Text, category: 'Text & Data' },
   { name: 'Case Converter', slug: 'case-converter', description: 'Convert text to various case formats.', icon: CaseSensitive, category: 'Text & Data' },
   { name: 'Text Cleaner', slug: 'text-cleaner', description: 'Remove extra spaces, lines, and HTML tags.', icon: Trash2, category: 'Text & Data' },
@@ -84,7 +85,7 @@ const toolsList: Tool[] = [
   { name: 'Favicon Generator', slug: 'favicon-generator', description: 'Create favicons from an image.', icon: Image, category: 'Generators' },
   
   // AI Tools
-  { name: 'Paraphraser', slug: 'paraphraser', description: 'Rewrite text to avoid plagiarism.', icon: Wand2, category: 'AI Tools' },
+  { name: 'Paraphraser', slug: 'paraphraser', description: 'Rewrite text to avoid plagiarism.', icon: Wand2, category: 'AI Tools', isNew: true },
   
   // Converters
   { name: 'Markdown to HTML', slug: 'markdown-to-html', description: 'Convert Markdown to HTML.', icon: FileCode, category: 'Converters' },
@@ -150,10 +151,33 @@ export const getToolsByCategory = (): ToolCategory[] => {
     categories[tool.category].push(tool);
   });
   
-  return Object.keys(categories).map(name => ({
-    name,
-    tools: categories[name],
-  })).sort((a, b) => a.name.localeCompare(b.name));
+  // Custom sort order for categories
+  const categoryOrder = [
+    'AI Tools',
+    'Text & Data',
+    'Web & Development',
+    'Image Tools',
+    'Converters',
+    'Encoders & Decoders',
+    'Generators',
+    'CSS Tools',
+    'Calculators',
+    'Documents'
+  ];
+
+  return Object.keys(categories)
+    .map(name => ({
+      name,
+      tools: categories[name],
+    }))
+    .sort((a, b) => {
+      const indexA = categoryOrder.indexOf(a.name);
+      const indexB = categoryOrder.indexOf(b.name);
+      if (indexA === -1 && indexB === -1) return a.name.localeCompare(b.name);
+      if (indexA === -1) return 1;
+      if (indexB === -1) return -1;
+      return indexA - indexB;
+    });
 };
 
 export const allTools = toolsList;
