@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
   const toolCategories = getToolsByCategory();
-  const featuredTool = 'paraphraser';
+  const featuredTool = 'json-formatter';
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden">
@@ -33,7 +33,7 @@ export default function Home() {
             <div className="mt-8">
               <Button asChild size="lg" className="group glow-border bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm border border-white/20 transition-all duration-300">
                 <Link href={`/${featuredTool}`}>
-                  Try our new AI Paraphraser <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  Try our JSON Formatter <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>

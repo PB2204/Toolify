@@ -1,6 +1,5 @@
 import React from 'react';
 import ComingSoon from './ComingSoon';
-import Paraphraser from './Paraphraser';
 import JsonFormatter from './JsonFormatter';
 import LoremIpsumGenerator from './LoremIpsumGenerator';
 import CaseConverter from './CaseConverter';
@@ -46,7 +45,6 @@ import GradientGenerator from './GradientGenerator';
 
 // Dynamically import all tool components. For now, most will be ComingSoon.
 const toolComponents: { [key: string]: React.ComponentType } = {
-  'paraphraser': Paraphraser,
   'json-formatter': JsonFormatter,
   'lorem-ipsum-generator': LoremIpsumGenerator,
   'case-converter': CaseConverter,
