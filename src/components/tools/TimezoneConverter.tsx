@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Input } from '@/components/ui/input';
 import { Clock } from 'lucide-react';
 import { format, parse } from 'date-fns';
-import { utcToZonedTime, zonedToUtc } from 'date-fns-tz';
+import { fromZonedTime, toZonedTime } from 'date-fns-tz';
 
 const timezones = Intl.supportedValuesOf('timeZone');
 
@@ -23,8 +23,8 @@ export default function TimezoneConverter() {
       const parsedDate = parse(sourceTime, "yyyy-MM-dd'T'HH:mm", new Date());
       if (isNaN(parsedDate.getTime())) return;
 
-      const utcDate = zonedToUtc(parsedDate, sourceTz);
-      const zonedTargetDate = utcToZonedTime(utcDate, targetTz);
+      const zonedDate = fromZonedTime(parsedDate, sourceTz);
+      const zonedTargetDate = toZonedTime(zonedDate, targetTz);
       
       setTargetTime(format(zonedTargetDate, "yyyy-MM-dd HH:mm:ss zzz"));
     } catch (e) {
