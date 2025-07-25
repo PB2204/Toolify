@@ -35,9 +35,9 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
 
   return (
     <div className="flex flex-col h-full">
-      <header className="flex items-center gap-4 p-4 border-b bg-background/80 backdrop-blur-sm sticky top-0 z-10">
-        <SidebarTrigger className="md:hidden" />
-        <h1 className="text-xl font-headline font-semibold">{tool.name}</h1>
+      <header className="flex items-center gap-4 p-4 border-b border-white/10 bg-transparent sticky top-0 z-10">
+        <SidebarTrigger className="md:hidden text-white" />
+        <h1 className="text-xl font-headline font-semibold text-white">{tool.name}</h1>
       </header>
       <main className="flex-1 p-4 md:p-6 overflow-y-auto">
         <ToolComponent />
