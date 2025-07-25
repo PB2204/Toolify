@@ -1,7 +1,6 @@
 'use server';
 
-import { run } from '@genkit-ai/next/server';
-import { paraphraseFlow } from '@/ai/flows/paraphrase';
+import { paraphrase, type ParaphraseFlowInput } from '@/ai/flows/paraphrase';
 import { z } from 'zod';
 
 const paraphraseSchema = z.object({
@@ -30,7 +29,7 @@ export async function paraphraseAction(
   }
 
   try {
-    const output = await run(paraphraseFlow, validatedFields.data);
+    const output = await paraphrase(validatedFields.data);
     return { result: output };
   } catch (error) {
     console.error(error);
