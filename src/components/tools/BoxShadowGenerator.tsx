@@ -1,10 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
-import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useToast } from '@/hooks/use-toast';
@@ -19,6 +18,11 @@ export default function BoxShadowGenerator() {
   const [color, setColor] = useState('rgba(0,0,0,0.2)');
   const [isInset, setIsInset] = useState(false);
   const { toast } = useToast();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const boxShadow = `${isInset ? 'inset ' : ''}${horizontalOffset}px ${verticalOffset}px ${blurRadius}px ${spreadRadius}px ${color}`;
 
@@ -57,7 +61,7 @@ export default function BoxShadowGenerator() {
           </div>
           <div>
             <Label>Shadow Color</Label>
-            <SketchPicker color={color} onChangeComplete={(c) => setColor(`rgba(${c.rgb.r}, ${c.rgb.g}, ${c.rgb.b}, ${c.rgb.a})`)} />
+            {isClient && <SketchPicker color={color} onChangeComplete={(c) => setColor(`rgba(${c.rgb.r}, ${c.rgb.g}, ${c.rgb.b}, ${c.rgb.a})`)} />}
           </div>
         </CardContent>
       </Card>

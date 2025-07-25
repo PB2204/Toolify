@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
@@ -49,20 +49,20 @@ export default function UnitConverter() {
     setOutputValue(result !== undefined ? parseFloat(result.toFixed(5)).toString() : '');
   };
 
-  useState(handleConvert);
+  useEffect(handleConvert, [inputValue, fromUnit, toUnit, category]);
   
-  useState(() => {
+  useEffect(() => {
     if (category === 'length') { setFromUnit('m'); setToUnit('ft'); }
     else if (category === 'mass') { setFromUnit('kg'); setToUnit('lb'); }
     else if (category === 'temperature') { setFromUnit('c'); setToUnit('f'); }
-  });
+  }, [category]);
 
   const handleSwap = () => {
     const tempFrom = fromUnit;
     setFromUnit(toUnit);
     setToUnit(tempFrom);
     setInputValue(outputValue);
-    setOutputValue(inputValue);
+    handleConvert();
   };
 
   return (
@@ -90,7 +90,7 @@ export default function UnitConverter() {
             <div className="space-y-2">
               <Label>From</Label>
               <div className='flex gap-2'>
-                <Input type="number" value={inputValue} onChange={e => setInputValue(e.target.value)} onKeyUp={handleConvert} />
+                <Input type="number" value={inputValue} onChange={e => setInputValue(e.target.value)} />
                 <Select value={fromUnit} onValueChange={setFromUnit}>
                   <SelectTrigger className="w-[120px]"><SelectValue /></SelectTrigger>
                   <SelectContent>

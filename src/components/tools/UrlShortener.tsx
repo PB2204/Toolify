@@ -26,12 +26,16 @@ export default function UrlShortener() {
     setShortUrl('');
 
     try {
-      const response = await fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(longUrl)}`);
+      // Using a CORS proxy to bypass browser restrictions on calling TinyURL directly
+      const response = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(longUrl)}`)}`);
+      
       if (!response.ok) {
-        throw new Error('Failed to shorten URL. The service may be down.');
+        throw new Error('Failed to shorten URL. The service may be down or the CORS proxy failed.');
       }
+      
       const data = await response.text();
-      if (data === 'Error') {
+
+      if (data.includes('Error') || !data.startsWith('https://tinyurl.com')) {
         throw new Error('Invalid URL or the URL is not reachable.');
       }
       setShortUrl(data);
@@ -54,7 +58,7 @@ export default function UrlShortener() {
       <Card>
         <CardHeader>
           <CardTitle className="font-headline text-2xl">URL Shortener</CardTitle>
-          <CardDescription>Create a short link for a long URL.</CardDescription>
+          <CardDescription>Create a short link for a long URL using TinyURL.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
