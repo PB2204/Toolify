@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
@@ -16,6 +16,11 @@ export default function GradientGenerator() {
   const [angle, setAngle] = useState(90);
   const [type, setType] = useState<'linear' | 'radial'>('linear');
   const { toast } = useToast();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const gradient = `${type}-gradient(${type === 'linear' ? `${angle}deg` : 'circle'}, ${color1}, ${color2})`;
 
@@ -65,11 +70,11 @@ export default function GradientGenerator() {
             <div className="grid grid-cols-2 gap-4">
                 <div>
                     <Label>Color 1</Label>
-                    <SketchPicker color={color1} onChangeComplete={(c) => setColor1(`rgba(${c.rgb.r}, ${c.rgb.g}, ${c.rgb.b}, ${c.rgb.a})`)} />
+                    {isClient && <SketchPicker color={color1} onChangeComplete={(c) => setColor1(`rgba(${c.rgb.r}, ${c.rgb.g}, ${c.rgb.b}, ${c.rgb.a})`)} />}
                 </div>
                  <div>
                     <Label>Color 2</Label>
-                    <SketchPicker color={color2} onChangeComplete={(c) => setColor2(`rgba(${c.rgb.r}, ${c.rgb.g}, ${c.rgb.b}, ${c.rgb.a})`)} />
+                    {isClient && <SketchPicker color={color2} onChangeComplete={(c) => setColor2(`rgba(${c.rgb.r}, ${c.rgb.g}, ${c.rgb.b}, ${c.rgb.a})`)} />}
                 </div>
             </div>
         </CardContent>
