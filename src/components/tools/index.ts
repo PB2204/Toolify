@@ -5,6 +5,11 @@ import JsonFormatter from './JsonFormatter';
 import LoremIpsumGenerator from './LoremIpsumGenerator';
 import CaseConverter from './CaseConverter';
 import WordCharacterCounter from './WordCharacterCounter';
+import PasswordGenerator from './PasswordGenerator';
+import UuidGenerator from './UuidGenerator';
+import HashGenerator from './HashGenerator';
+import Base64Converter from './Base64Converter';
+import UrlEncoderDecoder from './UrlEncoderDecoder';
 
 // Dynamically import all tool components. For now, most will be ComingSoon.
 const toolComponents: { [key: string]: React.ComponentType } = {
@@ -16,14 +21,14 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'word-character-counter': WordCharacterCounter,
   'readability-score-checker': ComingSoon,
   'diff-merge-checker': ComingSoon,
-  'base64-encoder-decoder': ComingSoon,
-  'url-encoder-decoder': ComingSoon,
+  'base64-encoder-decoder': Base64Converter,
+  'url-encoder-decoder': UrlEncoderDecoder,
   'jwt-decoder': ComingSoon,
   'html-entity-encoder-decoder': ComingSoon,
-  'uuid-guid-generator': ComingSoon,
+  'uuid-guid-generator': UuidGenerator,
   'qr-code-generator': ComingSoon,
-  'password-generator': ComingSoon,
-  'hash-generator': ComingSoon,
+  'password-generator': PasswordGenerator,
+  'hash-generator': HashGenerator,
   'random-data-generator': ComingSoon,
   'favicon-generator': ComingSoon,
   'markdown-to-html': ComingSoon,

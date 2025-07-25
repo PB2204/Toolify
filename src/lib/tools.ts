@@ -43,7 +43,8 @@ import {
   Braces,
   TestTube,
   Book,
-  Wand2
+  Wand2,
+  Lock
 } from 'lucide-react';
 
 export type Tool = {
@@ -62,7 +63,7 @@ export type ToolCategory = {
 
 const toolsList: Tool[] = [
   // Text & Content
-  { name: 'JSON Formatter & Validator', slug: 'json-formatter', description: 'Beautify and validate your JSON data.', icon: Braces, category: 'Text & Data', isNew: true },
+  { name: 'JSON Formatter & Validator', slug: 'json-formatter', description: 'Beautify and validate your JSON data.', icon: Braces, category: 'Text & Data' },
   { name: 'Lorem Ipsum Generator', slug: 'lorem-ipsum-generator', description: 'Generate placeholder text.', icon: Text, category: 'Text & Data' },
   { name: 'Case Converter', slug: 'case-converter', description: 'Convert text to various case formats.', icon: CaseSensitive, category: 'Text & Data' },
   { name: 'Text Cleaner', slug: 'text-cleaner', description: 'Remove extra spaces, lines, and HTML tags.', icon: Trash2, category: 'Text & Data' },
@@ -71,21 +72,21 @@ const toolsList: Tool[] = [
   { name: 'Diff & Merge Checker', slug: 'diff-merge-checker', description: 'Compare two text files.', icon: FlipHorizontal, category: 'Text & Data' },
   
   // Encoders & Decoders
-  { name: 'Base64 Encode / Decode', slug: 'base64-encoder-decoder', description: 'Encode or decode Base64 strings.', icon: ArrowRightLeft, category: 'Encoders & Decoders' },
-  { name: 'URL Encoder / Decoder', slug: 'url-encoder-decoder', description: 'Encode or decode URL components.', icon: Link, category: 'Encoders & Decoders' },
+  { name: 'Base64 Encode / Decode', slug: 'base64-encoder-decoder', description: 'Encode or decode Base64 strings.', icon: ArrowRightLeft, category: 'Encoders & Decoders', isNew: true },
+  { name: 'URL Encoder / Decoder', slug: 'url-encoder-decoder', description: 'Encode or decode URL components.', icon: Link, category: 'Encoders & Decoders', isNew: true },
   { name: 'JWT Decoder', slug: 'jwt-decoder', description: 'Decode JSON Web Tokens.', icon: Fingerprint, category: 'Encoders & Decoders' },
   { name: 'HTML Entity Encoder / Decoder', slug: 'html-entity-encoder-decoder', description: 'Convert characters to HTML entities.', icon: Code2, category: 'Encoders & Decoders' },
 
   // Generators
-  { name: 'UUID / GUID Generator', slug: 'uuid-guid-generator', description: 'Generate unique identifiers.', icon: Fingerprint, category: 'Generators' },
+  { name: 'UUID / GUID Generator', slug: 'uuid-guid-generator', description: 'Generate unique identifiers.', icon: Fingerprint, category: 'Generators', isNew: true },
   { name: 'QR Code Generator', slug: 'qr-code-generator', description: 'Create QR codes from text or URLs.', icon: QrCode, category: 'Generators' },
-  { name: 'Password Generator', slug: 'password-generator', description: 'Generate secure, random passwords.', icon: Milestone, category: 'Generators' },
-  { name: 'Hash Generator', slug: 'hash-generator', description: 'Generate MD5, SHA1, SHA256 hashes.', icon: Hash, category: 'Generators' },
+  { name: 'Password Generator', slug: 'password-generator', description: 'Generate secure, random passwords.', icon: Lock, category: 'Generators', isNew: true },
+  { name: 'Hash Generator', slug: 'hash-generator', description: 'Generate MD5, SHA1, SHA256 hashes.', icon: Hash, category: 'Generators', isNew: true },
   { name: 'Random Data Generator', slug: 'random-data-generator', description: 'Generate random names, emails, etc.', icon: TestTube2, category: 'Generators' },
   { name: 'Favicon Generator', slug: 'favicon-generator', description: 'Create favicons from an image.', icon: Image, category: 'Generators' },
   
   // AI Tools
-  { name: 'Paraphraser', slug: 'paraphraser', description: 'Rewrite text to avoid plagiarism.', icon: Wand2, category: 'AI Tools', isNew: true },
+  { name: 'Paraphraser', slug: 'paraphraser', description: 'Rewrite text to avoid plagiarism.', icon: Wand2, category: 'AI Tools' },
   
   // Converters
   { name: 'Markdown to HTML', slug: 'markdown-to-html', description: 'Convert Markdown to HTML.', icon: FileCode, category: 'Converters' },
@@ -168,7 +169,7 @@ export const getToolsByCategory = (): ToolCategory[] => {
   return Object.keys(categories)
     .map(name => ({
       name,
-      tools: categories[name],
+      tools: categories[name].sort((a,b) => a.name.localeCompare(b.name)),
     }))
     .sort((a, b) => {
       const indexA = categoryOrder.indexOf(a.name);
