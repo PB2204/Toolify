@@ -45,7 +45,7 @@ export default function MetaTagPreviewer() {
         <h3 className="text-lg font-semibold text-center">Social Media Preview</h3>
         <Card className="overflow-hidden bg-[#F0F2F5] dark:bg-[#18191A] border-none">
             <div className="aspect-[1.91/1] w-full bg-muted relative">
-               {imageUrl && <Image src={imageUrl} alt="Preview" layout="fill" objectFit="cover" />}
+               {imageUrl && <Image src={imageUrl} alt="Preview" layout="fill" objectFit="cover" data-ai-hint="website social media" />}
             </div>
             <div className="p-3 bg-[#FFFFFF] dark:bg-[#242526]">
                 <p className="text-xs uppercase text-gray-500 dark:text-gray-400">{url}</p>
