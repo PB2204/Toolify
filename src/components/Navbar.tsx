@@ -18,7 +18,7 @@ export function Navbar() {
                     <Link href="/about">About Us</Link>
                </Button>
                <Button variant="ghost" asChild>
-                    <Link href="/contact">Contact</Link>
+                    <a href="https://mbwebbers.tech/contact" target="_blank" rel="noopener noreferrer">Contact</a>
                </Button>
            </div>
           <ThemeToggle />

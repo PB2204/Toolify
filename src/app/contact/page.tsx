@@ -1,8 +1,5 @@
 import { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Toolify',
@@ -21,40 +18,13 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="mt-6 text-lg md:text-xl text-muted-foreground dark:text-slate-300">
-            Have a question, a feature request, or just want to say hello? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.
+            Have a question, a feature request, or just want to say hello? We'd love to hear from you.
           </p>
-        </div>
-
-        <div className="max-w-xl mx-auto">
-          <div className="glow-border rounded-xl">
-             <div className="rounded-lg p-8 md:p-12 space-y-6 bg-card/60 dark:bg-white/5 backdrop-blur-md">
-                <form action="#" className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="first-name">First Name</Label>
-                      <Input id="first-name" placeholder="John" />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="last-name">Last Name</Label>
-                      <Input id="last-name" placeholder="Doe" />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="john.doe@example.com" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" placeholder="Your message here..." rows={5} />
-                  </div>
-                  <div className="text-right">
-                    <Button type="submit" size="lg" className="w-full sm:w-auto">
-                      Send Message
-                    </Button>
-                  </div>
-                </form>
-             </div>
-          </div>
+           <div className="mt-8">
+                <Button size="lg" asChild className="group glow-border bg-foreground/10 text-foreground hover:bg-foreground/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 backdrop-blur-sm border border-border dark:border-white/20 transition-all duration-300">
+                    <a href="https://mbwebbers.tech/contact" target="_blank" rel="noopener noreferrer">Contact Us</a>
+                </Button>
+            </div>
         </div>
       </main>
     </div>

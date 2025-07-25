@@ -41,10 +41,10 @@ export default function ToolsLayout({
                 </SidebarMenuItem>
                  <SidebarMenuItem>
                     <SidebarMenuButton asChild tooltip="Contact" className="text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground data-[active=true]:bg-primary/10 data-[active=true]:text-primary dark:text-slate-300 dark:hover:bg-white/10 dark:data-[active=true]:bg-pink-500/20 dark:data-[active=true]:text-white md:hidden">
-                        <Link href="/contact">
+                        <a href="https://mbwebbers.tech/contact" target="_blank" rel="noopener noreferrer">
                             <Mail />
                             <span>Contact</span>
-                        </Link>
+                        </a>
                     </SidebarMenuButton>
                 </SidebarMenuItem>
                 <Separator className="my-2 md:hidden" />
