@@ -45,6 +45,28 @@ function ruleBasedParaphrase(text: string): string {
     return paraphrasedWords.join(' ');
 }
 
+const paraphraseAIPrompt = ai.definePrompt({
+  name: 'paraphraseAIPrompt',
+  prompt: `You are an expert paraphraser. Your task is to rewrite the following text to be unique and avoid plagiarism while maintaining the original meaning, tone, and key information. Do not add any new information or your own opinions. Output only the paraphrased text.
+
+Original text:
+"""
+{{{text}}}
+"""
+
+Paraphrased text:
+`,
+  input: {
+    schema: z.object({ text: z.string() }),
+  },
+  output: {
+    schema: z.string(),
+  },
+  config: {
+    temperature: 0.7,
+  }
+});
+
 
 const paraphraseFlow = ai.defineFlow(
   {
@@ -56,22 +78,7 @@ const paraphraseFlow = ai.defineFlow(
     if (!useAi) {
       return ruleBasedParaphrase(text);
     }
-
-    const prompt = `You are an expert paraphraser. Your task is to rewrite the following text to be unique and avoid plagiarism while maintaining the original meaning, tone, and key information. Do not add any new information or your own opinions. Output only the paraphrased text.
-
-Original text:
-"""
-${text}
-"""
-
-Paraphrased text:
-`;
-    const {output} = await ai.generate({
-      prompt,
-      config: {
-          temperature: 0.7,
-      }
-    });
+    const {output} = await paraphraseAIPrompt({text});
     return output!;
   }
 );
