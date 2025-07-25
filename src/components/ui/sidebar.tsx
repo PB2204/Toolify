@@ -198,7 +198,7 @@ const Sidebar = React.forwardRef<
           <SheetContent
             data-sidebar="sidebar"
             data-mobile="true"
-            className="w-[--sidebar-width] bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden"
+            className="w-[--sidebar-width] bg-background/95 backdrop-blur-sm p-0 text-foreground [&>button]:hidden"
             style={
               {
                 "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
@@ -358,7 +358,7 @@ const SidebarHeader = React.forwardRef<
     <div
       ref={ref}
       data-sidebar="header"
-      className={cn("flex flex-col gap-2 p-2", className)}
+      className={cn("flex flex-col gap-2 p-2", "md:bg-transparent md:p-2", "[[data-sidebar=sidebar][data-mobile=true]_&]:bg-primary/10 [[data-sidebar=sidebar][data-mobile=true]_&]:p-4", className)}
       {...props}
     />
   )
@@ -404,7 +404,7 @@ const SidebarContent = React.forwardRef<
       ref={ref}
       data-sidebar="content"
       className={cn(
-        "flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden",
+        "flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden", "[[data-sidebar=sidebar][data-mobile=true]_&]:p-4",
         className
       )}
       {...props}
@@ -562,7 +562,7 @@ const SidebarMenuButton = React.forwardRef<
         data-sidebar="menu-button"
         data-size={size}
         data-active={isActive}
-        className={cn(sidebarMenuButtonVariants({ variant, size }), className)}
+        className={cn(sidebarMenuButtonVariants({ variant, size }), className, "[[data-sidebar=sidebar][data-mobile=true]_&]:text-foreground [[data-sidebar=sidebar][data-mobile=true]_&[data-active=true]]:bg-accent [[data-sidebar=sidebar][data-mobile=true]_&[data-active=true]]:text-accent-foreground")}
         {...props}
       />
     )

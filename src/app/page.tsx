@@ -2,6 +2,7 @@ import { getToolsByCategory } from '@/lib/tools';
 import { ToolCard } from '@/components/ToolCard';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default function Home() {
   const toolCategories = getToolsByCategory();
@@ -9,7 +10,10 @@ export default function Home() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <header className="text-center mb-16">
+      <header className="text-center mb-16 relative">
+         <div className="absolute top-0 right-0">
+          <ThemeToggle />
+        </div>
         <h1 className="font-headline text-5xl md:text-7xl font-bold text-primary">
           Toolify
         </h1>
@@ -44,10 +48,6 @@ export default function Home() {
           </section>
         ))}
       </main>
-      
-      <footer className="text-center mt-20 py-6 border-t">
-        <p className="text-muted-foreground">&copy; {new Date().getFullYear()} Toolify. All rights reserved. || Developed with ❤️ :: By <a href="https://mbwebbers.tech" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">MB WEBBER'S</a></p>
-      </footer>
     </div>
   );
 }

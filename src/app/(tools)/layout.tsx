@@ -2,6 +2,7 @@ import { SidebarProvider, Sidebar, SidebarInset, SidebarHeader, SidebarContent, 
 import { allTools } from "@/lib/tools";
 import Link from "next/link";
 import { Home } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function ToolsLayout({
   children,
@@ -12,10 +13,11 @@ export default function ToolsLayout({
     <SidebarProvider>
       <div className="flex min-h-screen">
         <Sidebar>
-          <SidebarHeader>
+          <SidebarHeader className="flex items-center justify-between">
              <h1 className="font-headline text-2xl font-bold text-primary">
                 <Link href="/">Toolify</Link>
              </h1>
+             <ThemeToggle />
           </SidebarHeader>
           <SidebarContent>
             <SidebarMenu>
