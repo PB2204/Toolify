@@ -1,6 +1,7 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState, useEffect, useRef, useState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { paraphraseAction, type ParaphraseState } from '@/app/actions/paraphraseAction';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -8,7 +9,6 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircle, Bot, Loader2, Sparkles } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Switch } from '../ui/switch';
 
@@ -33,7 +33,7 @@ function SubmitButton() {
 
 export default function Paraphraser() {
   const initialState: ParaphraseState = {};
-  const [state, formAction] = useFormState(paraphraseAction, initialState);
+  const [state, formAction] = useActionState(paraphraseAction, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
   const [useAi, setUseAi] = useState(true);
