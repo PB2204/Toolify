@@ -40,17 +40,9 @@ import HttpHeaderInspector from './HttpHeaderInspector';
 import UnicodeInspector from './UnicodeInspector';
 import EmojiPicker from './EmojiPicker';
 import RandomDataGenerator from './RandomDataGenerator';
-import PdfMergerSplitter from './PdfMergerSplitter';
-import FaviconGenerator from './FaviconGenerator';
 import IsoDateFormatter from './IsoDateFormatter';
 import CurrencyConverter from './CurrencyConverter';
-import ImageCompressor from './ImageCompressor';
-import ImageResizerCropper from './ImageResizerCropper';
-import SvgOptimizer from './SvgOptimizer';
-import ExifMetadataViewer from './ExifMetadataViewer';
-import PdfToImagesConverter from './PdfToImagesConverter';
 import GradientGenerator from './GradientGenerator';
-import CssPlayground from './CssPlayground';
 
 // Dynamically import all tool components. For now, most will be ComingSoon.
 const toolComponents: { [key: string]: React.ComponentType } = {
@@ -71,7 +63,6 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'password-generator': PasswordGenerator,
   'hash-generator': HashGenerator,
   'random-data-generator': RandomDataGenerator,
-  'favicon-generator': FaviconGenerator,
   'markdown-to-html': MarkdownToHtml,
   'html-to-markdown': HtmlToMarkdown,
   'yaml-to-json-converter': YamlToJsonConverter,
@@ -82,16 +73,10 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'iso-date-formatter': IsoDateFormatter,
   'unit-converter': UnitConverter,
   'currency-converter': CurrencyConverter,
-  'image-compressor': ImageCompressor,
-  'image-resizer-cropper': ImageResizerCropper,
-  'svg-optimizer': SvgOptimizer,
-  'exif-metadata-viewer': ExifMetadataViewer,
-  'pdf-to-images-converter': PdfToImagesConverter,
   'color-picker-palette': ColorPickerPalette,
   'gradient-generator': GradientGenerator,
   'box-shadow-generator': BoxShadowGenerator,
   'border-radius-generator': BorderRadiusGenerator,
-  'css-playground': CssPlayground,
   'regex-tester': RegexTester,
   'url-shortener': UrlShortener,
   'responsive-tester': ComingSoon,
@@ -112,7 +97,6 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'emoji-picker': EmojiPicker,
   'percentage-calculator': PercentageCalculator,
   'loan-calculator': LoanCalculator,
-  'pdf-merger-splitter': PdfMergerSplitter,
   'csv-cleaner': ComingSoon,
 };
 
