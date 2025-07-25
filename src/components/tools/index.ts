@@ -20,6 +20,17 @@ import EpochTimestampConverter from './EpochTimestampConverter';
 import TimezoneConverter from './TimezoneConverter';
 import UnitConverter from './UnitConverter';
 import ColorPickerPalette from './ColorPickerPalette';
+import ReadabilityScoreChecker from './ReadabilityScoreChecker';
+import DiffMergeChecker from './DiffMergeChecker';
+import JsonToYamlConverter from './JsonToYamlConverter';
+import CsvToJsonConverter from './CsvToJsonConverter';
+import BoxShadowGenerator from './BoxShadowGenerator';
+import RegexTester from './RegexTester';
+import HttpStatusCodeLookup from './HttpStatusCodeLookup';
+import MimeTypeLookup from './MimeTypeLookup';
+import IpGeoLookup from './IpGeoLookup';
+import PercentageCalculator from './PercentageCalculator';
+import LoanCalculator from './LoanCalculator';
 
 // Dynamically import all tool components. For now, most will be ComingSoon.
 const toolComponents: { [key: string]: React.ComponentType } = {
@@ -29,8 +40,8 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'case-converter': CaseConverter,
   'text-cleaner': TextCleaner,
   'word-character-counter': WordCharacterCounter,
-  'readability-score-checker': ComingSoon,
-  'diff-merge-checker': ComingSoon,
+  'readability-score-checker': ReadabilityScoreChecker,
+  'diff-merge-checker': DiffMergeChecker,
   'base64-encoder-decoder': Base64Converter,
   'url-encoder-decoder': UrlEncoderDecoder,
   'jwt-decoder': JwtDecoder,
@@ -44,8 +55,8 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'markdown-to-html': MarkdownToHtml,
   'html-to-markdown': ComingSoon,
   'yaml-to-json-converter': YamlToJsonConverter,
-  'json-to-yaml-converter': ComingSoon,
-  'csv-to-json-converter': ComingSoon,
+  'json-to-yaml-converter': JsonToYamlConverter,
+  'csv-to-json-converter': CsvToJsonConverter,
   'epoch-timestamp-converter': EpochTimestampConverter,
   'timezone-converter': TimezoneConverter,
   'iso-date-formatter': ComingSoon,
@@ -58,29 +69,29 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'pdf-to-images-converter': ComingSoon,
   'color-picker-palette': ColorPickerPalette,
   'gradient-generator': ComingSoon,
-  'box-shadow-generator': ComingSoon,
+  'box-shadow-generator': BoxShadowGenerator,
   'border-radius-generator': ComingSoon,
   'css-playground': ComingSoon,
-  'regex-tester': ComingSoon,
+  'regex-tester': RegexTester,
   'url-shortener': ComingSoon,
   'responsive-tester': ComingSoon,
   'meta-tag-previewer': ComingSoon,
   'robots-sitemap-generator': ComingSoon,
   'utm-builder': ComingSoon,
   'pwa-icons-generator': ComingSoon,
-  'http-status-code-lookup': ComingSoon,
+  'http-status-code-lookup': HttpStatusCodeLookup,
   'cron-expression-builder': ComingSoon,
   'regex-cheat-sheet': ComingSoon,
-  'mime-type-lookup': ComingSoon,
+  'mime-type-lookup': MimeTypeLookup,
   'dns-whois-lookup': ComingSoon,
-  'ip-geo-lookup': ComingSoon,
+  'ip-geo-lookup': IpGeoLookup,
   'ping-visualizer': ComingSoon,
   'http-header-inspector': ComingSoon,
   'websocket-tester': ComingSoon,
   'unicode-inspector': ComingSoon,
   'emoji-picker': ComingSoon,
-  'percentage-calculator': ComingSoon,
-  'loan-calculator': ComingSoon,
+  'percentage-calculator': PercentageCalculator,
+  'loan-calculator': LoanCalculator,
   'pdf-merger-splitter': ComingSoon,
   'csv-cleaner': ComingSoon,
 };
