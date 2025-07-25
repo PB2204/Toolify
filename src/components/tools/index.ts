@@ -2,15 +2,18 @@ import React from 'react';
 import ComingSoon from './ComingSoon';
 import Paraphraser from './Paraphraser';
 import JsonFormatter from './JsonFormatter';
+import LoremIpsumGenerator from './LoremIpsumGenerator';
+import CaseConverter from './CaseConverter';
+import WordCharacterCounter from './WordCharacterCounter';
 
 // Dynamically import all tool components. For now, most will be ComingSoon.
 const toolComponents: { [key: string]: React.ComponentType } = {
   'paraphraser': Paraphraser,
   'json-formatter': JsonFormatter,
-  'lorem-ipsum-generator': ComingSoon,
-  'case-converter': ComingSoon,
+  'lorem-ipsum-generator': LoremIpsumGenerator,
+  'case-converter': CaseConverter,
   'text-cleaner': ComingSoon,
-  'word-character-counter': ComingSoon,
+  'word-character-counter': WordCharacterCounter,
   'readability-score-checker': ComingSoon,
   'diff-merge-checker': ComingSoon,
   'base64-encoder-decoder': ComingSoon,
