@@ -143,8 +143,6 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'base64-image-viewer': Base64ImageViewer,
   'random-picker': RandomPicker,
   'zodiac-finder': ZodiacFinder,
-
-  // Coming Soon
   'neumorphism-generator': NeumorphismGenerator,
   'font-style-previewer': FontStylePreviewer,
   'tailwind-color-generator': TailwindColorGenerator,

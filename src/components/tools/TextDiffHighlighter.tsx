@@ -1,5 +1,6 @@
-import ComingSoon from './ComingSoon';
+import DiffMergeChecker from './DiffMergeChecker';
 
+// The functionality is identical to DiffMergeChecker, so we reuse the component.
 export default function TextDiffHighlighter() {
-  return <ComingSoon />;
+  return <DiffMergeChecker />;
 }
