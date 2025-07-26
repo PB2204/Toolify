@@ -41,7 +41,7 @@ export default function IsoDateFormatter() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="w-full">
       <Card>
         <CardHeader>
           <CardTitle className="font-headline text-2xl">ISO 8601 Date Formatter</CardTitle>

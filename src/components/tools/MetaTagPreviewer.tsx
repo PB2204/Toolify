@@ -15,7 +15,7 @@ export default function MetaTagPreviewer() {
   const [imageUrl, setImageUrl] = useState('https://placehold.co/1200x630.png');
 
   return (
-    <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
       <Card>
         <CardHeader>
           <CardTitle className="font-headline text-2xl">Meta Tag / OG Previewer</CardTitle>

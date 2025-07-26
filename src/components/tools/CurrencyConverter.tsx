@@ -66,7 +66,7 @@ export default function CurrencyConverter() {
   };
 
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="w-full">
       <Card>
         <CardHeader>
           <CardTitle className="font-headline text-2xl">Currency Converter</CardTitle>

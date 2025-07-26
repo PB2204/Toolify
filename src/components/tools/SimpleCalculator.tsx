@@ -84,6 +84,7 @@ export default function SimpleCalculator() {
   const functionButtonClasses = `${buttonClasses} bg-muted hover:bg-muted/80`;
 
   return (
+    <div className='w-full max-w-sm mx-auto'>
     <Card>
       <CardHeader>
         <CardTitle className="font-headline text-2xl">Simple Calculator</CardTitle>
@@ -120,5 +121,6 @@ export default function SimpleCalculator() {
         </div>
       </CardContent>
     </Card>
+    </div>
   );
 }

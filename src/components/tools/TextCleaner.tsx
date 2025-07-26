@@ -56,7 +56,7 @@ export default function TextCleaner() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="w-full">
       <Card>
         <CardHeader>
           <CardTitle className="font-headline text-2xl">Text Cleaner</CardTitle>

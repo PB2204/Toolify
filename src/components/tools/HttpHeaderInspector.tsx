@@ -42,7 +42,7 @@ export default function HttpHeaderInspector() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="w-full">
       <Card>
         <CardHeader>
           <CardTitle className="font-headline text-2xl">HTTP Header Inspector</CardTitle>

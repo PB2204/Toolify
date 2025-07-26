@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -40,16 +40,15 @@ export default function UnicodeInspector() {
     setCharInfos(infos);
   };
   
-  useState(() => inspectText(input));
+  useEffect(() => inspectText(input), [input]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newText = e.target.value;
     setInput(newText);
-    inspectText(newText);
   }
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="w-full">
       <Card>
         <CardHeader>
           <CardTitle className="font-headline text-2xl">Unicode Inspector</CardTitle>
