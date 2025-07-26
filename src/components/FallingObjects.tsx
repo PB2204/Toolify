@@ -1,6 +1,7 @@
 'use client';
 
 import { useTheme } from 'next-themes';
+import { useState, useEffect } from 'react';
 
 const lightColors = [
     'rgba(41, 121, 255, 0.7)',  // Primary Accent: #2979FF
@@ -16,17 +17,40 @@ const darkColors = [
     'rgba(255, 255, 0, 0.7)',     // Yellow Accent
 ];
 
-
-const objects = Array.from({ length: 15 }).map((_, i) => ({
-  id: i,
-  left: `${Math.random() * 100}%`,
-  animationDuration: `${5 + Math.random() * 5}s`,
-  animationDelay: `${Math.random() * 5}s`,
-  size: `${10 + Math.random() * 20}px`,
-}));
+interface FallingObject {
+    id: number;
+    left: string;
+    animationDuration: string;
+    animationDelay: string;
+    size: string;
+}
 
 export function FallingObjects() {
   const { resolvedTheme } = useTheme();
+  const [objects, setObjects] = useState<FallingObject[]>([]);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (isClient) {
+        const generatedObjects = Array.from({ length: 15 }).map((_, i) => ({
+            id: i,
+            left: `${Math.random() * 100}%`,
+            animationDuration: `${5 + Math.random() * 5}s`,
+            animationDelay: `${Math.random() * 5}s`,
+            size: `${10 + Math.random() * 20}px`,
+        }));
+        setObjects(generatedObjects);
+    }
+  }, [isClient]);
+
+  if (!isClient) {
+    return null;
+  }
+  
   const colors = resolvedTheme === 'dark' ? darkColors : lightColors;
 
   return (
