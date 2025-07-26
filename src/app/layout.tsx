@@ -8,7 +8,7 @@ import { Navbar } from '@/components/Navbar';
 
 export const metadata: Metadata = {
   title: 'Toolify',
-  description: '60+ essential developer and designer tools in one place.',
+  description: '100+ essential developer and designer tools in one place.',
 };
 
 export default function RootLayout({
