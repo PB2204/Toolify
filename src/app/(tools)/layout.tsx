@@ -11,7 +11,7 @@ export default function ToolsLayout({
 }) {
   return (
     <div className="relative min-h-screen w-full">
-        <div className="absolute inset-0 -z-10 h-full w-full bg-background dark:animated-gradient-bg" />
+        <div className="absolute inset-0 -z-10 h-full w-full bg-background dark:bg-[#0E0F1C]" />
         <div className="absolute inset-0 -z-10 h-full w-full bg-background/80 backdrop-blur-2xl" />
         <SidebarProvider>
         <div className="flex min-h-screen">
@@ -24,7 +24,7 @@ export default function ToolsLayout({
             <SidebarContent className="bg-transparent">
                 <SidebarMenu>
                 <SidebarMenuItem>
-                    <SidebarMenuButton asChild tooltip="Dashboard" className="text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground data-[active=true]:bg-primary/10 data-[active=true]:text-primary dark:text-slate-200 dark:hover:bg-white/10 dark:data-[active=true]:bg-pink-500/20 dark:data-[active=true]:text-white">
+                    <SidebarMenuButton asChild tooltip="Dashboard" className="text-muted-foreground hover:bg-primary/20 hover:text-accent-foreground data-[active=true]:bg-primary/10 data-[active=true]:text-primary dark:text-slate-200 dark:hover:bg-white/10 dark:data-[active=true]:bg-primary/20 dark:data-[active=true]:text-white">
                     <Link href="/">
                         <Home />
                         <span>Dashboard</span>
@@ -32,7 +32,7 @@ export default function ToolsLayout({
                     </SidebarMenuButton>
                 </SidebarMenuItem>
                  <SidebarMenuItem>
-                    <SidebarMenuButton asChild tooltip="About Us" className="text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground data-[active=true]:bg-primary/10 data-[active=true]:text-primary dark:text-slate-300 dark:hover:bg-white/10 dark:data-[active=true]:bg-pink-500/20 dark:data-[active=true]:text-white md:hidden">
+                    <SidebarMenuButton asChild tooltip="About Us" className="text-muted-foreground hover:bg-primary/20 hover:text-accent-foreground data-[active=true]:bg-primary/10 data-[active=true]:text-primary dark:text-slate-300 dark:hover:bg-white/10 dark:data-[active=true]:bg-primary/20 dark:data-[active=true]:text-white md:hidden">
                         <Link href="/about">
                             <Info />
                             <span>About Us</span>
@@ -40,7 +40,7 @@ export default function ToolsLayout({
                     </SidebarMenuButton>
                 </SidebarMenuItem>
                  <SidebarMenuItem>
-                    <SidebarMenuButton asChild tooltip="Contact" className="text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground data-[active=true]:bg-primary/10 data-[active=true]:text-primary dark:text-slate-300 dark:hover:bg-white/10 dark:data-[active=true]:bg-pink-500/20 dark:data-[active=true]:text-white md:hidden">
+                    <SidebarMenuButton asChild tooltip="Contact" className="text-muted-foreground hover:bg-primary/20 hover:text-accent-foreground data-[active=true]:bg-primary/10 data-[active=true]:text-primary dark:text-slate-300 dark:hover:bg-white/10 dark:data-[active=true]:bg-primary/20 dark:data-[active=true]:text-white md:hidden">
                         <a href="https://mbwebbers.tech/contact" target="_blank" rel="noopener noreferrer">
                             <Mail />
                             <span>Contact</span>
@@ -50,7 +50,7 @@ export default function ToolsLayout({
                 <Separator className="my-2 md:hidden" />
                 {allTools.sort((a, b) => a.name.localeCompare(b.name)).map((tool) => (
                     <SidebarMenuItem key={tool.slug}>
-                    <SidebarMenuButton asChild tooltip={tool.name} className="text-muted-foreground hover:bg-accent/50 hover:text-accent-foreground data-[active=true]:bg-primary/10 data-[active=true]:text-primary dark:text-slate-300 dark:hover:bg-white/10 dark:data-[active=true]:bg-pink-500/20 dark:data-[active=true]:text-white">
+                    <SidebarMenuButton asChild tooltip={tool.name} className="text-muted-foreground hover:bg-primary/20 hover:text-accent-foreground data-[active=true]:bg-primary/10 data-[active=true]:text-primary dark:text-slate-300 dark:hover:bg-white/10 dark:data-[active=true]:bg-primary/20 dark:data-[active=true]:text-white">
                         <Link href={`/${tool.slug}`}>
                         <tool.icon />
                         <span>{tool.name}</span>

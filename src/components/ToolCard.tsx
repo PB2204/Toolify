@@ -16,10 +16,10 @@ export function ToolCard({ name, description, icon: Icon, href, isNew }: ToolCar
   return (
     <Link href={href} className="group block" prefetch={false}>
       <div className={cn(
-        'glow-border h-full rounded-lg p-6 transition-all duration-300',
-        'bg-card shadow-lg dark:border-white/10 dark:bg-white/5 dark:shadow-black/20 dark:backdrop-blur-md',
-        'hover:bg-card/60 dark:hover:bg-white/10 dark:hover:border-pink-500/50',
-        'group-hover:-translate-y-1 group-hover:shadow-pink-500/10',
+        'h-full rounded-2xl p-6 transition-all duration-300 ease-in-out',
+        'border border-white/10 bg-white/5 shadow-lg backdrop-blur-lg', // Glassmorphism base
+        'dark:border-white/10 dark:bg-white/5 dark:shadow-black/20',
+        'hover:scale-[1.03] hover:shadow-2xl dark:hover:shadow-[0_0_12px_#5F9DF7,0_0_24px_#E662A7]',
         'flex flex-col'
       )}>
         <div className="flex items-start justify-between">
@@ -29,7 +29,7 @@ export function ToolCard({ name, description, icon: Icon, href, isNew }: ToolCar
           {isNew && <Badge variant="outline" className="border-pink-500 text-pink-400">New</Badge>}
         </div>
         <h3 className="font-headline text-lg font-semibold text-foreground flex-grow">{name}</h3>
-        <p className="mt-1 text-sm text-muted-foreground ">{description}</p>
+        <p className="mt-1 text-sm text-muted-foreground">{description}</p>
         <div className="mt-4 flex justify-end items-center text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
            <span className="text-sm font-semibold">Use Tool</span>
            <ArrowRight className="ml-2 h-4 w-4" />

@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-background dark:animated-gradient-bg" />
+      <div className="absolute inset-0 -z-10 h-full w-full bg-background dark:bg-[#0E0F1C]" />
       <div className="absolute inset-0 -z-10 h-full w-full bg-background/80 backdrop-blur-2xl" />
 
       <div className="container mx-auto px-4">
