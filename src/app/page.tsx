@@ -3,6 +3,7 @@ import { ToolCard } from '@/components/ToolCard';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { FallingObjects } from '@/components/FallingObjects';
 
 export default function Home() {
   const toolCategories = getToolsByCategory();
@@ -10,9 +11,10 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden">
+      <FallingObjects />
       <div className="container mx-auto px-4">
         <main className="py-20 md:py-32">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto relative z-10">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground dark:animated-gradient-text">
               The Ultimate Developer Toolkit
             </h1>
@@ -28,7 +30,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-24">
+          <div className="mt-24 relative z-10">
             {toolCategories.map((category) => (
               <section key={category.name} className="mb-16">
                 <h2 className="font-headline text-3xl font-semibold mb-8 text-foreground/90 dark:text-white/90 text-glow">

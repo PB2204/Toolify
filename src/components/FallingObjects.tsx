@@ -1,0 +1,54 @@
+'use client';
+
+import { useTheme } from 'next-themes';
+
+const lightColors = [
+    'rgba(41, 121, 255, 0.7)',  // Primary Accent: #2979FF
+    'rgba(255, 64, 129, 0.7)',   // Secondary Accent: #FF4081
+    'rgba(100, 221, 23, 0.7)', // A light green
+    'rgba(255, 171, 0, 0.7)', // A light orange
+];
+
+const darkColors = [
+    'rgba(0, 255, 255, 0.7)',     // Neon Blue
+    'rgba(255, 0, 255, 0.7)',     // Neon Pink
+    'rgba(57, 255, 20, 0.7)',      // Neon Green
+    'rgba(255, 255, 0, 0.7)',     // Yellow Accent
+];
+
+
+const objects = Array.from({ length: 15 }).map((_, i) => ({
+  id: i,
+  left: `${Math.random() * 100}%`,
+  animationDuration: `${5 + Math.random() * 5}s`,
+  animationDelay: `${Math.random() * 5}s`,
+  size: `${10 + Math.random() * 20}px`,
+}));
+
+export function FallingObjects() {
+  const { resolvedTheme } = useTheme();
+  const colors = resolvedTheme === 'dark' ? darkColors : lightColors;
+
+  return (
+    <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden" aria-hidden="true">
+      {objects.map((obj) => (
+        <div
+          key={obj.id}
+          className="absolute rounded-full"
+          style={{
+            left: obj.left,
+            width: obj.size,
+            height: obj.size,
+            backgroundColor: colors[obj.id % colors.length],
+            animationName: 'fall',
+            animationTimingFunction: 'linear',
+            animationIterationCount: 'infinite',
+            animationDuration: obj.animationDuration,
+            animationDelay: obj.animationDelay,
+            filter: 'blur(5px)',
+          }}
+        />
+      ))}
+    </div>
+  );
+}
