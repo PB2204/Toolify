@@ -20,7 +20,7 @@ export default function Home() {
               The Ultimate Developer Toolkit
             </h1>
             <p className="mt-6 text-lg md:text-xl text-muted-foreground dark:text-slate-300">
-              Your one-stop shop for 60+ essential developer, designer, and content tools. Streamline your workflow with our powerful and easy-to-use utilities, all with a modern, beautiful UI.
+              Your one-stop shop for 100+ essential developer, designer, and content tools. Streamline your workflow with our powerful and easy-to-use utilities, all with a modern, beautiful UI.
             </p>
             <div className="mt-8">
               <Button asChild size="lg" className="group glow-border bg-foreground/10 text-foreground hover:bg-foreground/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 backdrop-blur-sm border border-border dark:border-white/20 transition-all duration-300">
