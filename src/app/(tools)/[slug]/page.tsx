@@ -4,6 +4,7 @@ import toolComponents from '@/components/tools';
 import ComingSoon from '@/components/tools/ComingSoon';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { Metadata } from 'next';
+import ScrollProgressIndicator from '@/components/tools/ScrollProgressIndicator';
 
 type Props = {
   params: { slug: string };
@@ -29,6 +30,10 @@ export default function ToolPage({ params }: { params: { slug: string } }) {
 
   if (!tool) {
     notFound();
+  }
+  
+  if (tool.slug === 'scroll-progress-indicator') {
+    return <ScrollProgressIndicator />;
   }
 
   const ToolComponent = toolComponents[tool.slug] || ComingSoon;
