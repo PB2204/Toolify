@@ -86,7 +86,7 @@ export function CustomCursor() {
         id="cursor-dot"
         ref={dotRef}
         className={cn(
-          'hidden md:block w-2 h-2 rounded-full'
+          'hidden md:block w-2 h-2 rounded-full -translate-x-1/2 -translate-y-1/2'
         )}
         style={{ backgroundColor: dotColor }}
       />
@@ -94,7 +94,7 @@ export function CustomCursor() {
         id="cursor-circle"
         ref={circleRef}
         className={cn(
-          "hidden md:block w-8 h-8 rounded-full border-2 transition-transform duration-200",
+          "hidden md:block w-8 h-8 rounded-full border-2 transition-transform duration-200 -translate-x-1/2 -translate-y-1/2",
           isHovering ? "scale-150" : "scale-100"
         )}
         style={{ 

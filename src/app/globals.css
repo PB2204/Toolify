@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 220 17% 98%; /* #F9FAFB */
+    --background: 240 13% 97%; /* #F6F7FA */
     --foreground: 220 29% 5%; /* #0B0C10 */
     
     --card: 0 0% 100%;
@@ -163,7 +163,6 @@
     pointer-events: none;
     z-index: 9999;
     transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
-    transform: translate(-50%, -50%);
 }
 
 @keyframes fall {

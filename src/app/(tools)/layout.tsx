@@ -13,7 +13,7 @@ export default function ToolsLayout({
     <div className="relative min-h-screen w-full">
         <SidebarProvider>
         <div className="flex min-h-screen">
-            <Sidebar className="border-r bg-transparent text-slate-200 dark:border-white/10">
+            <Sidebar className="border-r bg-transparent dark:border-white/10">
             <SidebarHeader className="hidden md:flex items-center justify-between p-4 border-b dark:border-white/10">
                 <h1 className="font-headline text-2xl font-bold text-foreground dark:text-white">
                     <Link href="/">Toolify</Link>
