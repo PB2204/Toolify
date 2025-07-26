@@ -96,25 +96,25 @@ const toolsList: Tool[] = [
   { name: 'Text Cleaner', slug: 'text-cleaner', description: 'Remove extra spaces, lines, and HTML tags.', icon: Eraser, category: 'Text & Data' },
   { name: 'Readability Score Checker', slug: 'readability-score-checker', description: 'Check readability scores like Flesch-Kincaid.', icon: ScanEye, category: 'Text & Data' },
   { name: 'Diff & Merge Checker', slug: 'diff-merge-checker', description: 'Compare two text files.', icon: FlipHorizontal, category: 'Text & Data' },
-  { name: 'Palindrome Checker', slug: 'palindrome-checker', description: 'Check if a string is a palindrome.', icon: Milestone, category: 'Text & Data', isNew: true },
-  { name: 'Anagram Finder', slug: 'anagram-finder', description: 'Find anagrams from a word or sentence.', icon: Shuffle, category: 'Text & Data', isNew: true },
-  { name: 'Text Reverser', slug: 'text-reverser', description: 'Reverse entire text, words, or letters.', icon: Repeat, category: 'Text & Data', isNew: true },
-  { name: 'Case Counter', slug: 'case-counter', description: 'Count number of uppercase/lowercase characters.', icon: Sigma, category: 'Text & Data', isNew: true },
-  { name: 'Whitespace Remover', slug: 'whitespace-remover', description: 'Remove all whitespaces or trim them.', icon: Eraser, category: 'Text & Data', isNew: true },
+  { name: 'Palindrome Checker', slug: 'palindrome-checker', description: 'Check if a string is a palindrome.', icon: Milestone, category: 'Text & Data' },
+  { name: 'Anagram Finder', slug: 'anagram-finder', description: 'Find anagrams from a word or sentence.', icon: Shuffle, category: 'Text & Data' },
+  { name: 'Text Reverser', slug: 'text-reverser', description: 'Reverse entire text, words, or letters.', icon: Repeat, category: 'Text & Data' },
+  { name: 'Case Counter', slug: 'case-counter', description: 'Count number of uppercase/lowercase characters.', icon: Sigma, category: 'Text & Data' },
+  { name: 'Whitespace Remover', slug: 'whitespace-remover', description: 'Remove all whitespaces or trim them.', icon: Eraser, category: 'Text & Data' },
   
   // Math & Calculation
-  { name: 'Simple Calculator', slug: 'simple-calculator', description: 'Basic calculator for simple arithmetic.', icon: Calculator, category: 'Math & Calculation', isNew: true },
-  { name: 'Prime Number Checker', slug: 'prime-number-checker', description: 'Check if a number is a prime number.', icon: CheckCircle, category: 'Math & Calculation', isNew: true },
-  { name: 'Factorial Calculator', slug: 'factorial-calculator', description: 'Find the factorial of a number.', icon: Binary, category: 'Math & Calculation', isNew: true },
-  { name: 'GCD & LCM Calculator', slug: 'gcd-lcm-calculator', description: 'Find greatest common divisor and least common multiple.', icon: GanttChartSquare, category: 'Math & Calculation', isNew: true },
+  { name: 'Simple Calculator', slug: 'simple-calculator', description: 'Basic calculator for simple arithmetic.', icon: Calculator, category: 'Math & Calculation' },
+  { name: 'Prime Number Checker', slug: 'prime-number-checker', description: 'Check if a number is a prime number.', icon: CheckCircle, category: 'Math & Calculation' },
+  { name: 'Factorial Calculator', slug: 'factorial-calculator', description: 'Find the factorial of a number.', icon: Binary, category: 'Math & Calculation' },
+  { name: 'GCD & LCM Calculator', slug: 'gcd-lcm-calculator', description: 'Find greatest common divisor and least common multiple.', icon: GanttChartSquare, category: 'Math & Calculation' },
   { name: 'Percentage Calculator', slug: 'percentage-calculator', description: 'Calculate percentages and discounts.', icon: Percent, category: 'Math & Calculation' },
   { name: 'Loan Calculator', slug: 'loan-calculator', description: 'Calculate loan payments.', icon: Landmark, category: 'Math & Calculation' },
   
   // Number Tools
-  { name: 'Roman Numeral Converter', slug: 'roman-numeral-converter', description: 'Convert numbers to and from Roman numerals.', icon: Book, category: 'Number Tools', isNew: true },
-  { name: 'Binary ↔ Decimal Converter', slug: 'binary-decimal-converter', description: 'Convert between binary and decimal numbers.', icon: ArrowRightLeft, category: 'Number Tools', isNew: true },
-  { name: 'Hex ↔ Decimal Converter', slug: 'hex-decimal-converter', description: 'Convert between hexadecimal and decimal numbers.', icon: ArrowRightLeft, category: 'Number Tools', isNew: true },
-  { name: 'Number to Words Converter', slug: 'number-to-words-converter', description: 'Convert numbers to written words.', icon: CaseSensitive, category: 'Number Tools', isNew: true },
+  { name: 'Roman Numeral Converter', slug: 'roman-numeral-converter', description: 'Convert numbers to and from Roman numerals.', icon: Book, category: 'Number Tools' },
+  { name: 'Binary ↔ Decimal Converter', slug: 'binary-decimal-converter', description: 'Convert between binary and decimal numbers.', icon: ArrowRightLeft, category: 'Number Tools' },
+  { name: 'Hex ↔ Decimal Converter', slug: 'hex-decimal-converter', description: 'Convert between hexadecimal and decimal numbers.', icon: ArrowRightLeft, category: 'Number Tools' },
+  { name: 'Number to Words Converter', slug: 'number-to-words-converter', description: 'Convert numbers to written words.', icon: CaseSensitive, category: 'Number Tools' },
 
   // Encoders & Decoders
   { name: 'Base64 Encode / Decode', slug: 'base64-encoder-decoder', description: 'Encode or decode Base64 strings.', icon: ArrowRightLeft, category: 'Encoders & Decoders' },
@@ -128,8 +128,8 @@ const toolsList: Tool[] = [
   { name: 'Password Generator', slug: 'password-generator', description: 'Generate secure, random passwords.', icon: Lock, category: 'Generators' },
   { name: 'Hash Generator', slug: 'hash-generator', description: 'Generate MD5, SHA1, SHA256 hashes.', icon: Hash, category: 'Generators' },
   { name: 'Random Data Generator', slug: 'random-data-generator', description: 'Generate random names, emails, etc.', icon: TestTube2, category: 'Generators' },
-  { name: 'Passphrase Generator', slug: 'passphrase-generator', description: 'Generate memorable passphrases.', icon: KeyRound, category: 'Generators', isNew: true },
-  { name: 'PIN Generator', slug: 'pin-generator', description: 'Generate random 4–8 digit numeric PINs.', icon: Pin, category: 'Generators', isNew: true },
+  { name: 'Passphrase Generator', slug: 'passphrase-generator', description: 'Generate memorable passphrases.', icon: KeyRound, category: 'Generators' },
+  { name: 'PIN Generator', slug: 'pin-generator', description: 'Generate random 4–8 digit numeric PINs.', icon: Pin, category: 'Generators' },
 
   // Converters
   { name: 'Markdown to HTML', slug: 'markdown-to-html', description: 'Convert Markdown to HTML.', icon: FileOutput, category: 'Converters' },
@@ -148,14 +148,14 @@ const toolsList: Tool[] = [
   { name: 'Gradient Generator', slug: 'gradient-generator', description: 'Create CSS gradients.', icon: PaletteIcon, category: 'CSS & UI Tools' },
   { name: 'Box-Shadow Generator', slug: 'box-shadow-generator', description: 'Generate CSS box-shadow styles.', icon: BoxSelect, category: 'CSS & UI Tools' },
   { name: 'Border-Radius Generator', slug: 'border-radius-generator', description: 'Preview and generate CSS border-radius.', icon: BoxSelect, category: 'CSS & UI Tools' },
-  { name: 'Glassmorphism CSS Generator', slug: 'glassmorphism-generator', description: 'Live preview and code generator.', icon: Brush, category: 'CSS & UI Tools', isNew: true },
+  { name: 'Glassmorphism CSS Generator', slug: 'glassmorphism-generator', description: 'Live preview and code generator.', icon: Brush, category: 'CSS & UI Tools' },
   { name: 'Neumorphism Generator', slug: 'neumorphism-generator', description: 'Stylish shadowed UI element generator.', icon: Paintbrush, category: 'CSS & UI Tools', isNew: true },
   { name: 'Font Style Previewer', slug: 'font-style-previewer', description: 'Preview text in Google Fonts.', icon: Baseline, category: 'CSS & UI Tools', isNew: true },
   { name: 'Tailwind Color Generator', slug: 'tailwind-color-generator', description: 'Pick Tailwind-compatible color shades.', icon: PaletteIcon, category: 'CSS & UI Tools', isNew: true },
   
   // Document Helpers
-  { name: 'Base64 Image Viewer', slug: 'base64-image-viewer', description: 'Convert image to Base64 and preview it.', icon: Image, category: 'Document Helpers', isNew: true },
-  { name: 'Markdown Live Previewer', slug: 'markdown-live-previewer', description: 'Preview rendered Markdown instantly.', icon: View, category: 'Document Helpers', isNew: true },
+  { name: 'Base64 Image Viewer', slug: 'base64-image-viewer', description: 'Convert image to Base64 and preview it.', icon: Image, category: 'Document Helpers' },
+  { name: 'Markdown Live Previewer', slug: 'markdown-live-previewer', description: 'Preview rendered Markdown instantly.', icon: View, category: 'Document Helpers' },
   { name: 'Code Formatter (HTML/CSS/JS)', slug: 'code-formatter', description: 'Beautify pasted code.', icon: Braces, category: 'Document Helpers', isNew: true },
   { name: 'Text Diff Highlighter', slug: 'text-diff-highlighter', description: 'Highlight changed lines with color codes.', icon: FlipHorizontal, category: 'Document Helpers', isNew: true },
 
@@ -173,11 +173,11 @@ const toolsList: Tool[] = [
   { name: 'Strong Password Evaluator', slug: 'strong-password-evaluator', description: 'Grade strength of any password.', icon: ShieldCheck, category: 'Web & Development', isNew: true },
 
   // Fun & Utility
-  { name: 'Flip a Coin', slug: 'flip-a-coin', description: 'Simple coin flip simulator.', icon: Coins, category: 'Fun & Utility', isNew: true },
-  { name: 'Dice Roller', slug: 'dice-roller', description: 'Roll 1–3 virtual dice.', icon: Dice5, category: 'Fun & Utility', isNew: true },
-  { name: 'Random Picker', slug: 'random-picker', description: 'Paste list of items and randomly pick one.', icon: ListRestart, category: 'Fun & Utility', isNew: true },
-  { name: 'Age Calculator', slug: 'age-calculator', description: 'Calculate age from birthdate.', icon: Cake, category: 'Fun & Utility', isNew: true },
-  { name: 'Zodiac Finder', slug: 'zodiac-finder', description: 'Get Western zodiac sign based on date.', icon: Gem, category: 'Fun & Utility', isNew: true },
+  { name: 'Flip a Coin', slug: 'flip-a-coin', description: 'Simple coin flip simulator.', icon: Coins, category: 'Fun & Utility' },
+  { name: 'Dice Roller', slug: 'dice-roller', description: 'Roll 1–3 virtual dice.', icon: Dice5, category: 'Fun & Utility' },
+  { name: 'Random Picker', slug: 'random-picker', description: 'Paste list of items and randomly pick one.', icon: ListRestart, category: 'Fun & Utility' },
+  { name: 'Age Calculator', slug: 'age-calculator', description: 'Calculate age from birthdate.', icon: Cake, category: 'Fun & Utility' },
+  { name: 'Zodiac Finder', slug: 'zodiac-finder', description: 'Get Western zodiac sign based on date.', icon: Gem, category: 'Fun & Utility' },
 ];
 
 export const getToolsByCategory = (): ToolCategory[] => {
