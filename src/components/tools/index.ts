@@ -93,21 +93,21 @@ import HtmlTagHighlighter from './HtmlTagHighlighter';
 import TextToEmojiConverter from './TextToEmojiConverter';
 
 // New placeholders for the 15 additional tools
-const ShadowToTailwindConverter = () => <ComingSoon />;
-const ColorContrastChecker = () => <ComingSoon />;
-const ResponsiveBreakpointTester = () => <ComingSoon />;
-const StickyNotes = () => <ComingSoon />;
-const PixelToRemConverter = () => <ComingSoon />;
-const ViewportSizeChecker = () => <ComingSoon />;
-const ClipboardHistory = () => <ComingSoon />;
-const FaviconGenerator = () => <ComingSoon />;
-const ComponentScreenshotTool = () => <ComingSoon />;
-const CommitMessageGenerator = () => <ComingSoon />;
-const FolderStructureVisualizer = () => <ComingSoon />;
-const CustomCursorPreviewer = () => <ComingSoon />;
-const ViewportUnitsConverter = () => <ComingSoon />;
-const DeveloperCheatsheet = () => <ComingSoon />;
-const AsciiArtGenerator = () => <ComingSoon />;
+import ShadowToTailwindConverter from './ShadowToTailwindConverter';
+import ColorContrastChecker from './ColorContrastChecker';
+import ResponsiveBreakpointTester from './ResponsiveBreakpointTester';
+import StickyNotes from './StickyNotes';
+import PixelToRemConverter from './PixelToRemConverter';
+import ViewportSizeChecker from './ViewportSizeChecker';
+import ClipboardHistory from './ClipboardHistory';
+import FaviconGenerator from './FaviconGenerator';
+import ComponentScreenshotTool from './ComponentScreenshotTool';
+import CommitMessageGenerator from './CommitMessageGenerator';
+import FolderStructureVisualizer from './FolderStructureVisualizer';
+import CustomCursorPreviewer from './CustomCursorPreviewer';
+import ViewportUnitsConverter from './ViewportUnitsConverter';
+import DeveloperCheatsheet from './DeveloperCheatsheet';
+import AsciiArtGenerator from './AsciiArtGenerator';
 
 
 // Dynamically import all tool components. For now, most will be ComingSoon.
