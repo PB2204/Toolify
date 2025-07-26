@@ -42,9 +42,40 @@ import RandomDataGenerator from './RandomDataGenerator';
 import IsoDateFormatter from './IsoDateFormatter';
 import CurrencyConverter from './CurrencyConverter';
 import GradientGenerator from './GradientGenerator';
+import PalindromeChecker from './PalindromeChecker';
+import AnagramFinder from './AnagramFinder';
+import TextReverser from './TextReverser';
+import CaseCounter from './CaseCounter';
+import WhitespaceRemover from './WhitespaceRemover';
+import SimpleCalculator from './SimpleCalculator';
+import PrimeNumberChecker from './PrimeNumberChecker';
+import FactorialCalculator from './FactorialCalculator';
+import GcdLcmCalculator from './GcdLcmCalculator';
+import RomanNumeralConverter from './RomanNumeralConverter';
+import BinaryDecimalConverter from './BinaryDecimalConverter';
+import HexDecimalConverter from './HexDecimalConverter';
+import NumberToWordsConverter from './NumberToWordsConverter';
+import GlassmorphismGenerator from './GlassmorphismGenerator';
+import NeumorphismGenerator from './NeumorphismGenerator';
+import FontStylePreviewer from './FontStylePreviewer';
+import TailwindColorGenerator from './TailwindColorGenerator';
+import Base64ImageViewer from './Base64ImageViewer';
+import MarkdownLivePreviewer from './MarkdownLivePreviewer';
+import CodeFormatter from './CodeFormatter';
+import TextDiffHighlighter from './TextDiffHighlighter';
+import StrongPasswordEvaluator from './StrongPasswordEvaluator';
+import PassphraseGenerator from './PassphraseGenerator';
+import PinGenerator from './PinGenerator';
+import FlipACoin from './FlipACoin';
+import DiceRoller from './DiceRoller';
+import RandomPicker from './RandomPicker';
+import AgeCalculator from './AgeCalculator';
+import ZodiacFinder from './ZodiacFinder';
+
 
 // Dynamically import all tool components. For now, most will be ComingSoon.
 const toolComponents: { [key: string]: React.ComponentType } = {
+  // Existing Tools
   'json-formatter': JsonFormatter,
   'lorem-ipsum-generator': LoremIpsumGenerator,
   'case-converter': CaseConverter,
@@ -87,6 +118,37 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'emoji-picker': EmojiPicker,
   'percentage-calculator': PercentageCalculator,
   'loan-calculator': LoanCalculator,
+
+  // New Tools
+  'palindrome-checker': PalindromeChecker,
+  'anagram-finder': AnagramFinder,
+  'text-reverser': TextReverser,
+  'case-counter': CaseCounter,
+  'whitespace-remover': WhitespaceRemover,
+  'simple-calculator': SimpleCalculator,
+  'prime-number-checker': PrimeNumberChecker,
+  'factorial-calculator': FactorialCalculator,
+  'gcd-lcm-calculator': GcdLcmCalculator,
+  'roman-numeral-converter': RomanNumeralConverter,
+  'binary-decimal-converter': BinaryDecimalConverter,
+  'hex-decimal-converter': HexDecimalConverter,
+  'number-to-words-converter': NumberToWordsConverter,
+  'glassmorphism-generator': GlassmorphismGenerator,
+  'neumorphism-generator': NeumorphismGenerator,
+  'font-style-previewer': FontStylePreviewer,
+  'tailwind-color-generator': TailwindColorGenerator,
+  'base64-image-viewer': Base64ImageViewer,
+  'markdown-live-previewer': MarkdownLivePreviewer,
+  'code-formatter': CodeFormatter,
+  'text-diff-highlighter': TextDiffHighlighter,
+  'strong-password-evaluator': StrongPasswordEvaluator,
+  'passphrase-generator': PassphraseGenerator,
+  'pin-generator': PinGenerator,
+  'flip-a-coin': FlipACoin,
+  'dice-roller': DiceRoller,
+  'random-picker': RandomPicker,
+  'age-calculator': AgeCalculator,
+  'zodiac-finder': ZodiacFinder,
 };
 
 export default toolComponents;
