@@ -47,10 +47,10 @@ export function CustomCursor() {
         circlePos.current.y += (mousePos.current.y - circlePos.current.y) * 0.2;
 
         if (dotRef.current) {
-            dotRef.current.style.transform = `translate(${mousePos.current.x}px, ${mousePos.current.y}px)`;
+            dotRef.current.style.transform = `translate(-50%, -50%) translate(${mousePos.current.x}px, ${mousePos.current.y}px)`;
         }
         if (circleRef.current) {
-            circleRef.current.style.transform = `translate(${circlePos.current.x}px, ${circlePos.current.y}px)`;
+            circleRef.current.style.transform = `translate(-50%, -50%) translate(${circlePos.current.x}px, ${circlePos.current.y}px)`;
         }
         
         requestRef.current = requestAnimationFrame(animate);
@@ -86,7 +86,7 @@ export function CustomCursor() {
         id="cursor-dot"
         ref={dotRef}
         className={cn(
-          'hidden md:block w-2 h-2 rounded-full -translate-x-1/2 -translate-y-1/2'
+          'hidden md:block w-2 h-2 rounded-full'
         )}
         style={{ backgroundColor: dotColor }}
       />
@@ -94,7 +94,7 @@ export function CustomCursor() {
         id="cursor-circle"
         ref={circleRef}
         className={cn(
-          "hidden md:block w-8 h-8 rounded-full border-2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-200",
+          "hidden md:block w-8 h-8 rounded-full border-2 transition-transform duration-200",
           isHovering ? "scale-150" : "scale-100"
         )}
         style={{ 
