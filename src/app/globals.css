@@ -35,7 +35,7 @@
   }
 
   .dark {
-    --background: 234 34% 8%; /* #0E0F1C */
+    --background: 240 13% 7%; /* #0d0d0d */
     --foreground: 0 0% 100%;
 
     --card: 234 34% 8%;
@@ -44,16 +44,16 @@
     --popover: 234 34% 8%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 217 91% 67%; /* #5F9DF7 */
+    --primary: 180 100% 50%; /* #00ffff Neon Blue */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 332 75% 64%; /* #E662A7 */
+    --secondary: 300 100% 50%; /* #ff00ff Neon Pink */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 222 29% 74%;
     --muted-foreground: 222 29% 74%; /* #A8B2D1 */
 
-    --accent: 332 75% 64%; /* #E662A7 */
+    --accent: 300 100% 50%; /* #ff00ff Neon Pink */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 63% 31%;
@@ -61,7 +61,7 @@
 
     --border: 0 0% 100% / 0.08;
     --input: 0 0% 100% / 0.08;
-    --ring: 217 91% 67%;
+    --ring: 180 100% 50%;
   }
 }
 
@@ -98,17 +98,18 @@
 }
 
 .animated-gradient-bg {
-    background: linear-gradient(-45deg, #5F9DF7, #E662A7, #8b5cf6, #3b82f6);
+    background: linear-gradient(-45deg, hsl(var(--primary)), hsl(var(--secondary)), #39ff14, #ffff00);
     background-size: 400% 400%;
     animation: gradientBG 25s ease infinite;
 }
 
 .animated-gradient-text {
-  background: linear-gradient(-45deg, #5F9DF7, #E662A7, #8b5cf6, #3b82f6);
+  background: linear-gradient(-45deg, hsl(var(--primary)), hsl(var(--secondary)), #39ff14, #ffff00);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientBG 15s ease infinite;
+  text-shadow: 0 0 5px hsla(var(--primary), 0.7), 0 0 10px hsla(var(--secondary), 0.7);
 }
 
 .glow-border {
@@ -123,7 +124,7 @@
   left: 0;
   width: 200%;
   height: 100%;
-  background: linear-gradient(115deg, transparent 20%, #E662A7 48%, #5F9DF7 52%, transparent 80%);
+  background: linear-gradient(115deg, transparent 20%, hsl(var(--secondary)) 48%, hsl(var(--primary)) 52%, transparent 80%);
   transition: transform 0.5s ease;
   transform: translateX(-100%);
   z-index: 1;
@@ -132,4 +133,8 @@
 
 .group:hover .glow-border::before, .glow-border:hover::before {
   transform: translateX(0);
+}
+
+.text-glow {
+    text-shadow: 0 0 5px hsla(var(--primary), 0.8), 0 0 10px hsla(var(--primary), 0.5);
 }

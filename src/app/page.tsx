@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-background dark:bg-[#0E0F1C]" />
+      <div className="absolute inset-0 -z-10 h-full w-full bg-background dark:animated-gradient-bg" />
       <div className="absolute inset-0 -z-10 h-full w-full bg-background/80 backdrop-blur-2xl" />
 
       <div className="container mx-auto px-4">
@@ -34,7 +34,7 @@ export default function Home() {
           <div className="mt-24">
             {toolCategories.map((category) => (
               <section key={category.name} className="mb-16">
-                <h2 className="font-headline text-3xl font-semibold mb-8 text-foreground/90 dark:text-white/90">
+                <h2 className="font-headline text-3xl font-semibold mb-8 text-foreground/90 dark:text-white/90 text-glow">
                   {category.name}
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

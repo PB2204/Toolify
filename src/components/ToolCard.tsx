@@ -19,7 +19,7 @@ export function ToolCard({ name, description, icon: Icon, href, isNew }: ToolCar
         'h-full rounded-2xl p-6 transition-all duration-300 ease-in-out',
         'border border-white/10 bg-white/5 shadow-lg backdrop-blur-lg', // Glassmorphism base
         'dark:border-white/10 dark:bg-white/5 dark:shadow-black/20',
-        'hover:scale-[1.03] hover:shadow-2xl dark:hover:shadow-[0_0_12px_#5F9DF7,0_0_24px_#E662A7]',
+        'hover:scale-[1.03] hover:shadow-2xl dark:hover:shadow-[0_0_12px_hsl(var(--primary)),0_0_24px_hsl(var(--secondary))]',
         'flex flex-col'
       )}>
         <div className="flex items-start justify-between">
