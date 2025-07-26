@@ -81,18 +81,16 @@ import BmiCalculator from './BmiCalculator';
 import DateToDayFinder from './DateToDayFinder';
 import TimeElapsedCounter from './TimeElapsedCounter';
 import CalendarEventCountdown from './CalendarEventCountdown';
-
-// New tools
-const TextToEmojiConverter = ComingSoon;
-const DaysBetweenDatesCalculator = ComingSoon;
-const PasswordStrengthVisualizer = ComingSoon;
-const TypingSpeedTester = ComingSoon;
-const NameInitialsGenerator = ComingSoon;
-const NumberPatternGenerator = ComingSoon;
-const ScrollProgressIndicator = ComingSoon;
-const MirrorTextGenerator = ComingSoon;
-const TextEncryptionCaesarCipher = ComingSoon;
-const HtmlTagHighlighter = ComingSoon;
+import DaysBetweenDatesCalculator from './DaysBetweenDatesCalculator';
+import PasswordStrengthVisualizer from './PasswordStrengthVisualizer';
+import TypingSpeedTester from './TypingSpeedTester';
+import NameInitialsGenerator from './NameInitialsGenerator';
+import NumberPatternGenerator from './NumberPatternGenerator';
+import ScrollProgressIndicator from './ScrollProgressIndicator';
+import MirrorTextGenerator from './MirrorTextGenerator';
+import TextEncryptionCaesarCipher from './TextEncryptionCaesarCipher';
+import HtmlTagHighlighter from './HtmlTagHighlighter';
+import TextToEmojiConverter from './TextToEmojiConverter';
 
 
 // Dynamically import all tool components. For now, most will be ComingSoon.
@@ -182,7 +180,7 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'time-elapsed-counter': TimeElapsedCounter,
   'calendar-event-countdown': CalendarEventCountdown,
 
-  // New Tools (placeholders)
+  // New Tools (implemented)
   'text-to-emoji-converter': TextToEmojiConverter,
   'days-between-dates-calculator': DaysBetweenDatesCalculator,
   'password-strength-visualizer': PasswordStrengthVisualizer,
