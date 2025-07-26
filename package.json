@@ -49,6 +49,7 @@
     "framer-motion": "^11.2.12",
     "genkit": "^1.14.1",
     "he": "^1.2.0",
+    "html2canvas": "^1.4.1",
     "js-yaml": "^4.1.0",
     "jwt-decode": "^4.0.0",
     "lucide-react": "^0.475.0",

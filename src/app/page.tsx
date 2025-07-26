@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
   const toolCategories = getToolsByCategory();
-  const featuredTool = 'json-formatter';
+  const featuredTool = 'meta-tag-previewer';
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden">
@@ -25,7 +25,7 @@ export default function Home() {
             <div className="mt-8">
               <Button asChild size="lg" className="group glow-border bg-foreground/10 text-foreground hover:bg-foreground/20 dark:bg-white/10 dark:text-white dark:hover:bg-white/20 backdrop-blur-sm border border-border dark:border-white/20 transition-all duration-300">
                 <Link href={`/${featuredTool}`}>
-                  Try our JSON Formatter <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  Try our Meta Tag Previewer <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>
