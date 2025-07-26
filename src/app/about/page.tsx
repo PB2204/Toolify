@@ -45,7 +45,7 @@ const services = [
 export default function AboutPage() {
   return (
     <div className="bg-background text-foreground">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-background dark:animated-gradient-bg" />
+      <div className="absolute inset-0 -z-10 h-full w-full bg-background" />
       <div className="absolute inset-0 -z-10 h-full w-full bg-background/80 backdrop-blur-2xl" />
 
       <main className="container mx-auto px-4 py-16 sm:py-24 space-y-24">
