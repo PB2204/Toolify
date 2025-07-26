@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
 import { AnimatedShapes } from '@/components/AnimatedShapes';
+import { CustomCursor } from '@/components/CustomCursor';
 
 export const metadata: Metadata = {
   title: 'Toolify',
@@ -31,6 +32,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <CustomCursor />
             <div className="absolute inset-0 -z-10 h-full w-full bg-background" />
             <div className="absolute inset-0 -z-10 h-full w-full bg-background/80 backdrop-blur-2xl" />
             <AnimatedShapes />

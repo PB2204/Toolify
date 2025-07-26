@@ -71,6 +71,11 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* Custom Cursor Base */
+    cursor: none;
+  }
+   body a, body button {
+    cursor: none;
   }
 }
 
@@ -95,12 +100,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.animated-gradient-bg {
-    background: linear-gradient(-45deg, hsl(var(--primary)), hsl(var(--secondary)), #39ff14, #ffff00);
-    background-size: 400% 400%;
-    animation: gradientBG 25s ease infinite;
 }
 
 .animated-gradient-text {
