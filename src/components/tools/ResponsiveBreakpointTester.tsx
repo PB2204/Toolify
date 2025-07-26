@@ -16,8 +16,8 @@ const breakpoints = [
 ];
 
 export default function ResponsiveBreakpointTester() {
-  const [url, setUrl] = useState('https://toolify.ai');
-  const [displayUrl, setDisplayUrl] = useState('https://toolify.ai');
+  const [url, setUrl] = useState('https://mbwebbers.tech');
+  const [displayUrl, setDisplayUrl] = useState('https://mbwebbers.tech');
   const [size, setSize] = useState({ width: 1024, height: 768 });
   const [key, setKey] = useState(0); // To force iframe reload
 
