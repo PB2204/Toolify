@@ -86,6 +86,18 @@ import {
   ArrowBigUpDash,
   Thermometer,
   Key,
+  Contrast,
+  MonitorSmartphone,
+  StickyNote,
+  Scaling,
+  RectangleHorizontal,
+  ClipboardList,
+  ImageIcon,
+  Camera,
+  GitCommit,
+  FolderTree,
+  MousePointer,
+  Move,
 } from 'lucide-react';
 
 export type Tool = {
@@ -116,10 +128,10 @@ const toolsList: Tool[] = [
   { name: 'Text Reverser', slug: 'text-reverser', description: 'Reverse entire text, words, or letters.', icon: Repeat, category: 'Text & Data' },
   { name: 'Case Counter', slug: 'case-counter', description: 'Count number of uppercase/lowercase characters.', icon: Sigma, category: 'Text & Data' },
   { name: 'Whitespace Remover', slug: 'whitespace-remover', description: 'Remove all whitespaces or trim them.', icon: Eraser, category: 'Text & Data' },
-  { name: 'Alphabetical Sorter', slug: 'alphabetical-sorter', description: 'Sorts a list of items alphabetically.', icon: ArrowDownAZ, category: 'Text & Data', isNew: true },
-  { name: 'Duplicate Line Remover', slug: 'duplicate-line-remover', description: 'Removes duplicate lines from a text input.', icon: CopySlash, category: 'Text & Data', isNew: true },
-  { name: 'Letter Counter', slug: 'letter-counter', description: 'Counts vowels, consonants, and more.', icon: SpellCheck, category: 'Text & Data', isNew: true },
-  { name: 'Name Initials Generator', slug: 'name-initials-generator', description: 'Extracts initials from full names.', icon: UserSquare, category: 'Text & Data', isNew: true },
+  { name: 'Alphabetical Sorter', slug: 'alphabetical-sorter', description: 'Sorts a list of items alphabetically.', icon: ArrowDownAZ, category: 'Text & Data' },
+  { name: 'Duplicate Line Remover', slug: 'duplicate-line-remover', description: 'Removes duplicate lines from a text input.', icon: CopySlash, category: 'Text & Data' },
+  { name: 'Letter Counter', slug: 'letter-counter', description: 'Counts vowels, consonants, and more.', icon: SpellCheck, category: 'Text & Data' },
+  { name: 'Name Initials Generator', slug: 'name-initials-generator', description: 'Extracts initials from full names.', icon: UserSquare, category: 'Text & Data' },
   
   // Math & Calculation
   { name: 'Simple Calculator', slug: 'simple-calculator', description: 'Basic calculator for simple arithmetic.', icon: Calculator, category: 'Math & Calculation' },
@@ -128,9 +140,9 @@ const toolsList: Tool[] = [
   { name: 'GCD & LCM Calculator', slug: 'gcd-lcm-calculator', description: 'Find greatest common divisor and least common multiple.', icon: GanttChartSquare, category: 'Math & Calculation' },
   { name: 'Percentage Calculator', slug: 'percentage-calculator', description: 'Calculate percentages and discounts.', icon: Percent, category: 'Math & Calculation' },
   { name: 'Loan Calculator', slug: 'loan-calculator', description: 'Calculate loan payments.', icon: Landmark, category: 'Math & Calculation' },
-  { name: 'Days Between Dates Calculator', slug: 'days-between-dates-calculator', description: 'Calculates days between two dates.', icon: CalendarRange, category: 'Math & Calculation', isNew: true },
-  { name: 'BMI Calculator', slug: 'bmi-calculator', description: 'Calculates Body Mass Index.', icon: HeartPulse, category: 'Math & Calculation', isNew: true },
-  { name: 'Tip Calculator', slug: 'tip-calculator', description: 'Calculates how much tip to leave.', icon: HandCoins, category: 'Math & Calculation', isNew: true },
+  { name: 'Days Between Dates Calculator', slug: 'days-between-dates-calculator', description: 'Calculates days between two dates.', icon: CalendarRange, category: 'Math & Calculation' },
+  { name: 'BMI Calculator', slug: 'bmi-calculator', description: 'Calculates Body Mass Index.', icon: HeartPulse, category: 'Math & Calculation' },
+  { name: 'Tip Calculator', slug: 'tip-calculator', description: 'Calculates how much tip to leave.', icon: HandCoins, category: 'Math & Calculation' },
 
   // Number Tools
   { name: 'Roman Numeral Converter', slug: 'roman-numeral-converter', description: 'Convert numbers to and from Roman numerals.', icon: Book, category: 'Number Tools' },
@@ -143,8 +155,8 @@ const toolsList: Tool[] = [
   { name: 'URL Encoder / Decoder', slug: 'url-encoder-decoder', description: 'Encode or decode URL components.', icon: Link, category: 'Encoders & Decoders' },
   { name: 'JWT Decoder', slug: 'jwt-decoder', description: 'Decode JSON Web Tokens.', icon: Fingerprint, category: 'Encoders & Decoders' },
   { name: 'HTML Entity Encoder / Decoder', slug: 'html-entity-encoder-decoder', description: 'Convert characters to HTML entities.', icon: Code2, category: 'Encoders & Decoders' },
-  { name: 'Text to Binary Converter', slug: 'text-to-binary-converter', description: 'Converts plain text into binary and vice versa.', icon: Binary, category: 'Encoders & Decoders', isNew: true },
-  { name: 'Text Encryption (Caesar Cipher)', slug: 'text-encryption-caesar-cipher', description: 'Basic letter-shift encoding/decoding tool.', icon: Key, category: 'Encoders & Decoders', isNew: true },
+  { name: 'Text to Binary Converter', slug: 'text-to-binary-converter', description: 'Converts plain text into binary and vice versa.', icon: Binary, category: 'Encoders & Decoders' },
+  { name: 'Text Encryption (Caesar Cipher)', slug: 'text-encryption-caesar-cipher', description: 'Basic letter-shift encoding/decoding tool.', icon: Key, category: 'Encoders & Decoders' },
 
   // Generators
   { name: 'UUID / GUID Generator', slug: 'uuid-guid-generator', description: 'Generate unique identifiers.', icon: Fingerprint, category: 'Generators' },
@@ -154,7 +166,9 @@ const toolsList: Tool[] = [
   { name: 'Random Data Generator', slug: 'random-data-generator', description: 'Generate random names, emails, etc.', icon: TestTube2, category: 'Generators' },
   { name: 'Passphrase Generator', slug: 'passphrase-generator', description: 'Generate memorable passphrases.', icon: KeyRound, category: 'Generators' },
   { name: 'PIN Generator', slug: 'pin-generator', description: 'Generate random 4–8 digit numeric PINs.', icon: Pin, category: 'Generators' },
-  { name: 'Number Pattern Generator', slug: 'number-pattern-generator', description: 'Generates numeric patterns like triangles.', icon: Shapes, category: 'Generators', isNew: true },
+  { name: 'Number Pattern Generator', slug: 'number-pattern-generator', description: 'Generates numeric patterns like triangles.', icon: Shapes, category: 'Generators' },
+  { name: 'Favicon Generator', slug: 'favicon-generator', description: 'Generate favicons of multiple sizes from an image.', icon: ImageIcon, category: 'Generators', isNew: true },
+
 
   // Converters
   { name: 'Markdown to HTML', slug: 'markdown-to-html', description: 'Convert Markdown to HTML.', icon: FileOutput, category: 'Converters' },
@@ -167,7 +181,10 @@ const toolsList: Tool[] = [
   { name: 'ISO Date Formatter', slug: 'iso-date-formatter', description: 'Format dates into ISO 8601 strings.', icon: CalendarDays, category: 'Converters' },
   { name: 'Unit Converter', slug: 'unit-converter', description: 'Convert length, weight, temp, etc.', icon: Scale, category: 'Converters' },
   { name: 'Currency Converter', slug: 'currency-converter', description: 'Convert between world currencies.', icon: DollarSign, category: 'Converters' },
-  { name: 'Fahrenheit ↔ Celsius ↔ Kelvin', slug: 'temperature-converter', description: 'Convert between temperature units instantly.', icon: Thermometer, category: 'Converters', isNew: true },
+  { name: 'Fahrenheit ↔ Celsius ↔ Kelvin', slug: 'temperature-converter', description: 'Convert between temperature units instantly.', icon: Thermometer, category: 'Converters' },
+  { name: 'Pixel to REM Converter', slug: 'pixel-to-rem-converter', description: 'Convert px to rem units for scalable UI design.', icon: Scaling, category: 'Converters', isNew: true },
+  { name: 'Viewport Units Converter', slug: 'viewport-units-converter', description: 'Convert px to vw/vh for responsive designs.', icon: Move, category: 'Converters', isNew: true },
+
 
   // CSS & UI Tools
   { name: 'Color Picker & Palette', slug: 'color-picker-palette', description: 'Pick colors and generate palettes.', icon: Palette, category: 'CSS & UI Tools' },
@@ -178,14 +195,20 @@ const toolsList: Tool[] = [
   { name: 'Neumorphism Generator', slug: 'neumorphism-generator', description: 'Stylish shadowed UI element generator.', icon: Paintbrush, category: 'CSS & UI Tools' },
   { name: 'Font Style Previewer', slug: 'font-style-previewer', description: 'Preview text in Google Fonts.', icon: Baseline, category: 'CSS & UI Tools' },
   { name: 'Tailwind Color Generator', slug: 'tailwind-color-generator', description: 'Pick Tailwind-compatible color shades.', icon: PaletteIcon, category: 'CSS & UI Tools' },
-  { name: 'Scroll Progress Indicator', slug: 'scroll-progress-indicator', description: 'Displays page scroll progress.', icon: ArrowBigUpDash, category: 'CSS & UI Tools', isNew: true },
+  { name: 'Scroll Progress Indicator', slug: 'scroll-progress-indicator', description: 'Displays page scroll progress.', icon: ArrowBigUpDash, category: 'CSS & UI Tools' },
+  { name: 'Shadow to Tailwind Converter', slug: 'shadow-to-tailwind-converter', description: 'Convert CSS box-shadow to Tailwind classes.', icon: BoxSelect, category: 'CSS & UI Tools', isNew: true },
+  { name: 'Color Contrast Checker', slug: 'color-contrast-checker', description: 'Check accessibility contrast ratio between colors.', icon: Contrast, category: 'CSS & UI Tools', isNew: true },
+  { name: 'Custom Cursor Previewer', slug: 'custom-cursor-previewer', description: 'Test different custom cursor styles interactively.', icon: MousePointer, category: 'CSS & UI Tools', isNew: true },
   
   // Document Helpers
   { name: 'Base64 Image Viewer', slug: 'base64-image-viewer', description: 'Convert image to Base64 and preview it.', icon: Image, category: 'Document Helpers' },
   { name: 'Markdown Live Previewer', slug: 'markdown-live-previewer', description: 'Preview rendered Markdown instantly.', icon: View, category: 'Document Helpers' },
   { name: 'Code Formatter (HTML/CSS/JS)', slug: 'code-formatter', description: 'Beautify pasted code.', icon: Braces, category: 'Document Helpers' },
   { name: 'Text Diff Highlighter', slug: 'text-diff-highlighter', description: 'Highlight changed lines with color codes.', icon: FlipHorizontal, category: 'Document Helpers' },
-  { name: 'HTML Tag Highlighter', slug: 'html-tag-highlighter', description: 'Highlights and explains any HTML tags.', icon: Code2, category: 'Document Helpers', isNew: true },
+  { name: 'HTML Tag Highlighter', slug: 'html-tag-highlighter', description: 'Highlights and explains any HTML tags.', icon: Code2, category: 'Document Helpers' },
+  { name: 'Component Screenshot Tool', slug: 'component-screenshot-tool', description: 'Render a div and export it as an image.', icon: Camera, category: 'Document Helpers', isNew: true },
+  { name: 'Folder Structure Visualizer', slug: 'folder-structure-visualizer', description: 'Visualize a nested file structure from text.', icon: FolderTree, category: 'Document Helpers', isNew: true },
+  { name: 'Developer Keyboard Shortcut Cheatsheet', slug: 'developer-cheatsheet', description: 'Shortcuts for VS Code, Git, DevTools, etc.', icon: Keyboard, category: 'Document Helpers', isNew: true },
 
   // Web & Development
   { name: 'Regex Tester', slug: 'regex-tester', description: 'Test and debug regular expressions.', icon: Regex, category: 'Web & Development' },
@@ -199,7 +222,10 @@ const toolsList: Tool[] = [
   { name: 'Unicode Inspector', slug: 'unicode-inspector', description: 'Inspect details of Unicode characters.', icon: CaseSensitive, category: 'Web & Development' },
   { name: 'Emoji Picker', slug: 'emoji-picker', description: 'Find and copy emojis.', icon: Smile, category: 'Web & Development' },
   { name: 'Strong Password Evaluator', slug: 'strong-password-evaluator', description: 'Grade strength of any password.', icon: ShieldCheck, category: 'Web & Development' },
-  { name: 'Password Strength Visualizer', slug: 'password-strength-visualizer', description: 'Real-time password strength visualization.', icon: ShieldCheck, category: 'Web & Development', isNew: true },
+  { name: 'Password Strength Visualizer', slug: 'password-strength-visualizer', description: 'Real-time password strength visualization.', icon: ShieldCheck, category: 'Web & Development' },
+  { name: 'Responsive Breakpoint Tester', slug: 'responsive-breakpoint-tester', description: 'Preview site at various screen sizes.', icon: MonitorSmartphone, category: 'Web & Development', isNew: true },
+  { name: 'Viewport Size Live Checker', slug: 'viewport-size-checker', description: 'Show current browser width and height.', icon: RectangleHorizontal, category: 'Web & Development', isNew: true },
+  { name: 'Commit Message Generator', slug: 'commit-message-generator', description: 'Guideline-based commit message suggester.', icon: GitCommit, category: 'Web & Development', isNew: true },
 
   // Fun & Utility
   { name: 'Flip a Coin', slug: 'flip-a-coin', description: 'Simple coin flip simulator.', icon: Coins, category: 'Fun & Utility' },
@@ -207,12 +233,16 @@ const toolsList: Tool[] = [
   { name: 'Random Picker', slug: 'random-picker', description: 'Paste list of items and randomly pick one.', icon: ListRestart, category: 'Fun & Utility' },
   { name: 'Age Calculator', slug: 'age-calculator', description: 'Calculate age from birthdate.', icon: Cake, category: 'Fun & Utility' },
   { name: 'Zodiac Finder', slug: 'zodiac-finder', description: 'Get Western zodiac sign based on date.', icon: Gem, category: 'Fun & Utility' },
-  { name: 'Text to Emoji Converter', slug: 'text-to-emoji-converter', description: 'Converts text into fun emojis.', icon: SmilePlus, category: 'Fun & Utility', isNew: true },
-  { name: 'Date to Day Finder', slug: 'date-to-day-finder', description: 'Tells the weekday of any date.', icon: CalendarSearch, category: 'Fun & Utility', isNew: true },
-  { name: 'Typing Speed Tester', slug: 'typing-speed-tester', description: 'Measures typing speed in words per minute.', icon: Keyboard, category: 'Fun & Utility', isNew: true },
-  { name: 'Time Elapsed Counter', slug: 'time-elapsed-counter', description: 'Shows time since a selected date.', icon: TimerReset, category: 'Fun & Utility', isNew: true },
-  { name: 'Mirror Text Generator', slug: 'mirror-text-generator', description: 'Flips and mirrors text for fun.', icon: FlipHorizontal, category: 'Fun & Utility', isNew: true },
-  { name: 'Calendar Event Countdown', slug: 'calendar-event-countdown', description: 'Countdown timer to a specific event.', icon: Timer, category: 'Fun & Utility', isNew: true },
+  { name: 'Text to Emoji Converter', slug: 'text-to-emoji-converter', description: 'Converts text into fun emojis.', icon: SmilePlus, category: 'Fun & Utility' },
+  { name: 'Date to Day Finder', slug: 'date-to-day-finder', description: 'Tells the weekday of any date.', icon: CalendarSearch, category: 'Fun & Utility' },
+  { name: 'Typing Speed Tester', slug: 'typing-speed-tester', description: 'Measures typing speed in words per minute.', icon: Keyboard, category: 'Fun & Utility' },
+  { name: 'Time Elapsed Counter', slug: 'time-elapsed-counter', description: 'Shows time since a selected date.', icon: TimerReset, category: 'Fun & Utility' },
+  { name: 'Mirror Text Generator', slug: 'mirror-text-generator', description: 'Flips and mirrors text for fun.', icon: FlipHorizontal, category: 'Fun & Utility' },
+  { name: 'Calendar Event Countdown', slug: 'calendar-event-countdown', description: 'Countdown timer to a specific event.', icon: Timer, category: 'Fun & Utility' },
+  { name: 'Sticky Notes (Local)', slug: 'sticky-notes', description: 'Local browser sticky notes using localStorage.', icon: StickyNote, category: 'Fun & Utility', isNew: true },
+  { name: 'Clipboard History (Session)', slug: 'clipboard-history', description: 'Review texts copied during a session.', icon: ClipboardList, category: 'Fun & Utility', isNew: true },
+  { name: 'ASCII Art Generator', slug: 'ascii-art-generator', description: 'Convert text to ASCII art.', icon: Type, category: 'Fun & Utility', isNew: true },
+
 ];
 
 export const getToolsByCategory = (): ToolCategory[] => {

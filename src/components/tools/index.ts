@@ -92,6 +92,23 @@ import TextEncryptionCaesarCipher from './TextEncryptionCaesarCipher';
 import HtmlTagHighlighter from './HtmlTagHighlighter';
 import TextToEmojiConverter from './TextToEmojiConverter';
 
+// New placeholders for the 15 additional tools
+const ShadowToTailwindConverter = () => <ComingSoon />;
+const ColorContrastChecker = () => <ComingSoon />;
+const ResponsiveBreakpointTester = () => <ComingSoon />;
+const StickyNotes = () => <ComingSoon />;
+const PixelToRemConverter = () => <ComingSoon />;
+const ViewportSizeChecker = () => <ComingSoon />;
+const ClipboardHistory = () => <ComingSoon />;
+const FaviconGenerator = () => <ComingSoon />;
+const ComponentScreenshotTool = () => <ComingSoon />;
+const CommitMessageGenerator = () => <ComingSoon />;
+const FolderStructureVisualizer = () => <ComingSoon />;
+const CustomCursorPreviewer = () => <ComingSoon />;
+const ViewportUnitsConverter = () => <ComingSoon />;
+const DeveloperCheatsheet = () => <ComingSoon />;
+const AsciiArtGenerator = () => <ComingSoon />;
+
 
 // Dynamically import all tool components. For now, most will be ComingSoon.
 const toolComponents: { [key: string]: React.ComponentType } = {
@@ -191,6 +208,23 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'mirror-text-generator': MirrorTextGenerator,
   'text-encryption-caesar-cipher': TextEncryptionCaesarCipher,
   'html-tag-highlighter': HtmlTagHighlighter,
+
+  // Newest Batch of Tools (placeholders)
+  'shadow-to-tailwind-converter': ShadowToTailwindConverter,
+  'color-contrast-checker': ColorContrastChecker,
+  'responsive-breakpoint-tester': ResponsiveBreakpointTester,
+  'sticky-notes': StickyNotes,
+  'pixel-to-rem-converter': PixelToRemConverter,
+  'viewport-size-checker': ViewportSizeChecker,
+  'clipboard-history': ClipboardHistory,
+  'favicon-generator': FaviconGenerator,
+  'component-screenshot-tool': ComponentScreenshotTool,
+  'commit-message-generator': CommitMessageGenerator,
+  'folder-structure-visualizer': FolderStructureVisualizer,
+  'custom-cursor-previewer': CustomCursorPreviewer,
+  'viewport-units-converter': ViewportUnitsConverter,
+  'developer-cheatsheet': DeveloperCheatsheet,
+  'ascii-art-generator': AsciiArtGenerator,
 };
 
 export default toolComponents;
