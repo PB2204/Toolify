@@ -72,6 +72,28 @@ import RandomPicker from './RandomPicker';
 import AgeCalculator from './AgeCalculator';
 import ZodiacFinder from './ZodiacFinder';
 
+// New tools
+const TextToEmojiConverter = ComingSoon;
+const DaysBetweenDatesCalculator = ComingSoon;
+const AlphabeticalSorter = ComingSoon;
+const DuplicateLineRemover = ComingSoon;
+const BmiCalculator = ComingSoon;
+const TipCalculator = ComingSoon;
+const DateToDayFinder = ComingSoon;
+const LetterCounter = ComingSoon;
+const PasswordStrengthVisualizer = ComingSoon;
+const TypingSpeedTester = ComingSoon;
+const NameInitialsGenerator = ComingSoon;
+const TextToBinaryConverter = ComingSoon;
+const NumberPatternGenerator = ComingSoon;
+const TimeElapsedCounter = ComingSoon;
+const ScrollProgressIndicator = ComingSoon;
+const MirrorTextGenerator = ComingSoon;
+const TemperatureConverter = ComingSoon;
+const TextEncryptionCaesarCipher = ComingSoon;
+const HtmlTagHighlighter = ComingSoon;
+const CalendarEventCountdown = ComingSoon;
+
 
 // Dynamically import all tool components. For now, most will be ComingSoon.
 const toolComponents: { [key: string]: React.ComponentType } = {
@@ -149,6 +171,28 @@ const toolComponents: { [key: string]: React.ComponentType } = {
   'code-formatter': CodeFormatter,
   'text-diff-highlighter': TextDiffHighlighter,
   'strong-password-evaluator': StrongPasswordEvaluator,
+
+  // New Tools (placeholders)
+  'text-to-emoji-converter': TextToEmojiConverter,
+  'days-between-dates-calculator': DaysBetweenDatesCalculator,
+  'alphabetical-sorter': AlphabeticalSorter,
+  'duplicate-line-remover': DuplicateLineRemover,
+  'bmi-calculator': BmiCalculator,
+  'tip-calculator': TipCalculator,
+  'date-to-day-finder': DateToDayFinder,
+  'letter-counter': LetterCounter,
+  'password-strength-visualizer': PasswordStrengthVisualizer,
+  'typing-speed-tester': TypingSpeedTester,
+  'name-initials-generator': NameInitialsGenerator,
+  'text-to-binary-converter': TextToBinaryConverter,
+  'number-pattern-generator': NumberPatternGenerator,
+  'time-elapsed-counter': TimeElapsedCounter,
+  'scroll-progress-indicator': ScrollProgressIndicator,
+  'mirror-text-generator': MirrorTextGenerator,
+  'temperature-converter': TemperatureConverter,
+  'text-encryption-caesar-cipher': TextEncryptionCaesarCipher,
+  'html-tag-highlighter': HtmlTagHighlighter,
+  'calendar-event-countdown': CalendarEventCountdown,
 };
 
 export default toolComponents;
