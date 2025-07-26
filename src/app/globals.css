@@ -4,34 +4,34 @@
 
 @layer base {
   :root {
-    --background: 240 13% 97%; /* #F6F7FA */
-    --foreground: 220 29% 5%; /* #0B0C10 */
+    --background: 230 20% 96%; /* #F1F3F9 */
+    --foreground: 224 71.4% 4.1%;
     
     --card: 0 0% 100%;
-    --card-foreground: 220 29% 5%;
+    --card-foreground: 224 71.4% 4.1%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 29% 5%;
+    --popover-foreground: 224 71.4% 4.1%;
 
-    --primary: 205 76% 51%; /* #29ABE2 */
-    --primary-foreground: 210 40% 98%;
+    --primary: 265 100% 48%; /* #6A00F4 - Vibrant Violet */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 9% 45%; /* #6B7280 */
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 220 9% 45%;
-    --muted-foreground: 220 9% 45%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
     
-    --accent: 336 100% 62%; /* #FF3CAC */
-    --accent-foreground: 210 40% 98%;
+    --accent: 336 100% 71%; /* #FF6EC7 - Bright Pink */
+    --accent-foreground: 224 71.4% 4.1%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 0% / 0.08;
-    --input: 220 13% 91%;
-    --ring: 205 76% 51%;
-    --radius: 0.5rem;
+    --border: 0 0% 0% / 0.05;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 251 100% 50%; /* #FFAE00 - Amber */
+    --radius: 0.75rem; /* 12px */
   }
 
   .dark {

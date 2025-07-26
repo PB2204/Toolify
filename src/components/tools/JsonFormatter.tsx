@@ -66,7 +66,7 @@ export default function JsonFormatter() {
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="grid gap-2">
-              <Label htmlFor="json-input">Your JSON</Label>
+              <Label htmlFor="json-input" className="text-[#FF5F6D]">Your JSON</Label>
               <Textarea
                 id="json-input"
                 value={input}
@@ -77,7 +77,7 @@ export default function JsonFormatter() {
               />
             </div>
             <div className="grid gap-2">
-              <Label htmlFor="json-output">Formatted JSON</Label>
+              <Label htmlFor="json-output" className="text-[#FF5F6D]">Formatted JSON</Label>
               <div className="relative">
                 <Textarea
                   id="json-output"
@@ -85,7 +85,7 @@ export default function JsonFormatter() {
                   value={formatted}
                   placeholder="Formatted JSON will appear here"
                   rows={15}
-                  className="bg-primary/5 border-primary/20 text-base font-mono"
+                  className="bg-accent/10 border-accent/20 text-base font-mono"
                 />
                 {formatted && (
                    <Button variant="ghost" size="icon" className="absolute top-2 right-2 h-7 w-7" onClick={handleCopy}>
