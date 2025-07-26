@@ -8,6 +8,9 @@ const cursorColors = [
   'hsl(var(--secondary))',
   '#39ff14',
   '#ffff00',
+  '#ff9a00',
+  '#ff005e',
+  '#8f00ff',
 ];
 
 export function CustomCursor() {
@@ -17,7 +20,6 @@ export function CustomCursor() {
   const [colorIndex, setColorIndex] = useState(0);
 
   const requestRef = useRef<number>();
-  const previousTimeRef = useRef<number>();
   
   const mousePos = useRef({ x: -100, y: -100 });
   const circlePos = useRef({ x: -100, y: -100 });
@@ -39,21 +41,18 @@ export function CustomCursor() {
       }
     };
 
-    const animate = (time: number) => {
-        if (previousTimeRef.current !== undefined) {
-            const deltaTime = time - previousTimeRef.current;
-            
-            circlePos.current.x += (mousePos.current.x - circlePos.current.x) * 0.1 * deltaTime * 0.1;
-            circlePos.current.y += (mousePos.current.y - circlePos.current.y) * 0.1 * deltaTime * 0.1;
+    const animate = () => {
+        // Lerp for smooth following
+        circlePos.current.x += (mousePos.current.x - circlePos.current.x) * 0.2;
+        circlePos.current.y += (mousePos.current.y - circlePos.current.y) * 0.2;
 
-            if (dotRef.current) {
-                dotRef.current.style.transform = `translate(${mousePos.current.x}px, ${mousePos.current.y}px)`;
-            }
-             if (circleRef.current) {
-                circleRef.current.style.transform = `translate(${circlePos.current.x}px, ${circlePos.current.y}px)`;
-            }
+        if (dotRef.current) {
+            dotRef.current.style.transform = `translate(${mousePos.current.x}px, ${mousePos.current.y}px)`;
         }
-        previousTimeRef.current = time;
+        if (circleRef.current) {
+            circleRef.current.style.transform = `translate(${circlePos.current.x}px, ${circlePos.current.y}px)`;
+        }
+        
         requestRef.current = requestAnimationFrame(animate);
     }
     
@@ -65,7 +64,7 @@ export function CustomCursor() {
     
     const colorInterval = setInterval(() => {
         setColorIndex(prevIndex => (prevIndex + 1) % cursorColors.length);
-    }, 2000);
+    }, 1500);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
@@ -78,7 +77,8 @@ export function CustomCursor() {
     };
   }, []);
   
-  const currentColor = cursorColors[colorIndex];
+  const dotColor = cursorColors[colorIndex];
+  const circleColor = cursorColors[(colorIndex + 1) % cursorColors.length];
 
   return (
     <>
@@ -88,7 +88,7 @@ export function CustomCursor() {
         className={cn(
           'hidden md:block w-2 h-2 rounded-full -translate-x-1/2 -translate-y-1/2'
         )}
-        style={{ backgroundColor: currentColor }}
+        style={{ backgroundColor: dotColor }}
       />
       <div
         id="cursor-circle"
@@ -98,8 +98,8 @@ export function CustomCursor() {
           isHovering ? "scale-150" : "scale-100"
         )}
         style={{ 
-          borderColor: currentColor,
-          boxShadow: `0 0 10px ${currentColor}`,
+          borderColor: circleColor,
+          boxShadow: `0 0 10px ${circleColor}`,
         }}
       />
     </>
