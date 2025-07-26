@@ -155,3 +155,11 @@
       transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
   }
 }
+
+#cursor-dot, #cursor-circle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+}

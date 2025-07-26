@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 const cursorColors = [
@@ -11,13 +11,20 @@ const cursorColors = [
 ];
 
 export function CustomCursor() {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
+  const dotRef = useRef<HTMLDivElement>(null);
+  const circleRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
   const [colorIndex, setColorIndex] = useState(0);
 
+  const requestRef = useRef<number>();
+  const previousTimeRef = useRef<number>();
+  
+  const mousePos = useRef({ x: -100, y: -100 });
+  const circlePos = useRef({ x: -100, y: -100 });
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      mousePos.current = { x: e.clientX, y: e.clientY };
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -32,6 +39,26 @@ export function CustomCursor() {
       }
     };
 
+    const animate = (time: number) => {
+        if (previousTimeRef.current !== undefined) {
+            const deltaTime = time - previousTimeRef.current;
+            
+            circlePos.current.x += (mousePos.current.x - circlePos.current.x) * 0.1 * deltaTime * 0.1;
+            circlePos.current.y += (mousePos.current.y - circlePos.current.y) * 0.1 * deltaTime * 0.1;
+
+            if (dotRef.current) {
+                dotRef.current.style.transform = `translate(${mousePos.current.x}px, ${mousePos.current.y}px)`;
+            }
+             if (circleRef.current) {
+                circleRef.current.style.transform = `translate(${circlePos.current.x}px, ${circlePos.current.y}px)`;
+            }
+        }
+        previousTimeRef.current = time;
+        requestRef.current = requestAnimationFrame(animate);
+    }
+    
+    requestRef.current = requestAnimationFrame(animate);
+
     window.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseover', handleMouseOver);
     document.addEventListener('mouseout', handleMouseOut);
@@ -45,21 +72,36 @@ export function CustomCursor() {
       document.removeEventListener('mouseover', handleMouseOver);
       document.removeEventListener('mouseout', handleMouseOut);
       clearInterval(colorInterval);
+      if(requestRef.current) {
+          cancelAnimationFrame(requestRef.current);
+      }
     };
   }, []);
+  
+  const currentColor = cursorColors[colorIndex];
 
   return (
-    <div
-      className={cn(
-        "hidden md:block fixed w-8 h-8 rounded-full border-2 pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-all duration-200 ease-in-out z-[9999]",
-        isHovering ? "scale-150" : "scale-100"
-      )}
-      style={{ 
-        left: `${position.x}px`, 
-        top: `${position.y}px`,
-        borderColor: cursorColors[colorIndex],
-        boxShadow: `0 0 15px ${cursorColors[colorIndex]}`,
-      }}
-    />
+    <>
+      <div
+        id="cursor-dot"
+        ref={dotRef}
+        className={cn(
+          'hidden md:block w-2 h-2 rounded-full -translate-x-1/2 -translate-y-1/2'
+        )}
+        style={{ backgroundColor: currentColor }}
+      />
+      <div
+        id="cursor-circle"
+        ref={circleRef}
+        className={cn(
+          "hidden md:block w-8 h-8 rounded-full border-2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-200",
+          isHovering ? "scale-150" : "scale-100"
+        )}
+        style={{ 
+          borderColor: currentColor,
+          boxShadow: `0 0 10px ${currentColor}`,
+        }}
+      />
+    </>
   );
 }
