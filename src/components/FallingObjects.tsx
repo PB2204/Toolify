@@ -4,10 +4,14 @@ import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react';
 
 const lightColors = [
-    'rgba(41, 121, 255, 0.7)',  // Primary Accent: #2979FF
-    'rgba(255, 64, 129, 0.7)',   // Secondary Accent: #FF4081
-    'rgba(100, 221, 23, 0.7)', // A light green
-    'rgba(255, 171, 0, 0.7)', // A light orange
+    'rgba(0, 191, 255, 0.6)', // Sky Blue
+    'rgba(0, 255, 255, 0.6)', // Bright Cyan
+    'rgba(179, 136, 255, 0.6)', // Light Purple
+    'rgba(0, 242, 169, 0.6)', // Aqua Green
+    'rgba(255, 230, 0, 0.6)', // Bright Yellow
+    'rgba(255, 107, 107, 0.6)', // Coral Pink
+    'rgba(255, 159, 28, 0.6)', // Neon Orange
+    'rgba(255, 60, 172, 0.6)', // Hot Pink
 ];
 
 const darkColors = [

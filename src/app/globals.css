@@ -4,16 +4,16 @@
 
 @layer base {
   :root {
-    --background: 220 20% 98%; /* #F7F9FC */
+    --background: 220 17% 98%; /* #F9FAFB */
     --foreground: 220 29% 5%; /* #0B0C10 */
     
-    --card: 220 20% 98%;
+    --card: 0 0% 100%;
     --card-foreground: 220 29% 5%;
 
-    --popover: 220 20% 98%;
+    --popover: 0 0% 100%;
     --popover-foreground: 220 29% 5%;
 
-    --primary: 221 100% 58%; /* #2979FF */
+    --primary: 205 76% 51%; /* #29ABE2 */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 220 9% 45%; /* #6B7280 */
@@ -22,15 +22,15 @@
     --muted: 220 9% 45%;
     --muted-foreground: 220 9% 45%;
     
-    --accent: 340 100% 63%; /* #FF4081 */
+    --accent: 336 100% 62%; /* #FF3CAC */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 0% / 0.05;
+    --border: 0 0% 0% / 0.08;
     --input: 220 13% 91%;
-    --ring: 221 100% 58%;
+    --ring: 205 76% 51%;
     --radius: 0.5rem;
   }
 
@@ -163,6 +163,7 @@
     pointer-events: none;
     z-index: 9999;
     transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    transform: translate(-50%, -50%);
 }
 
 @keyframes fall {
