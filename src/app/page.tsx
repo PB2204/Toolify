@@ -10,9 +10,6 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-background" />
-      <div className="absolute inset-0 -z-10 h-full w-full bg-background/80 backdrop-blur-2xl" />
-
       <div className="container mx-auto px-4">
         <main className="py-20 md:py-32">
           <div className="text-center max-w-4xl mx-auto">

@@ -31,9 +31,11 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <div className="absolute inset-0 -z-10 h-full w-full bg-background" />
+            <div className="absolute inset-0 -z-10 h-full w-full bg-background/80 backdrop-blur-2xl" />
             <AnimatedShapes />
             <Navbar />
-            <div className="flex-grow">
+            <div className="flex-grow relative z-10">
               {children}
             </div>
             <Footer />

@@ -11,8 +11,6 @@ export default function ToolsLayout({
 }) {
   return (
     <div className="relative min-h-screen w-full">
-        <div className="absolute inset-0 -z-10 h-full w-full bg-background" />
-        <div className="absolute inset-0 -z-10 h-full w-full bg-background/80 backdrop-blur-2xl" />
         <SidebarProvider>
         <div className="flex min-h-screen">
             <Sidebar className="border-r bg-transparent text-slate-200 dark:border-white/10">

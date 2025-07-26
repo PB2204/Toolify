@@ -9,9 +9,6 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="bg-background text-foreground">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-background" />
-      <div className="absolute inset-0 -z-10 h-full w-full bg-background/80 backdrop-blur-2xl" />
-
       <main className="container mx-auto px-4 py-16 sm:py-24">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground dark:animated-gradient-text">
