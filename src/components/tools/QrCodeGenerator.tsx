@@ -9,7 +9,7 @@ import { Download, Trash, Wand2 } from 'lucide-react';
 import QRCode from 'qrcode';
 
 export default function QrCodeGenerator() {
-  const [text, setText] = useState('https://toolify.ai');
+  const [text, setText] = useState('https://mbwebbers.dev');
   const [qrCodeUrl, setQrCodeUrl] = useState('');
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
